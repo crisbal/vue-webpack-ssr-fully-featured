@@ -1,0 +1,6 @@
+{
+	"showcase_static": "Hello world!",
+	"showcase_dynamic": "no elements | single element | {counter} elements",
+	"site_name": "WikiToLearn",
+	"site_subtitle": "Collaborative Textbooks"
+}
