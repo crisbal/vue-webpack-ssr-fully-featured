@@ -46,8 +46,6 @@
 </style>
 
 <script>
-const logo = require("static/logo.png")
-
 export default {
 	name: "App",
 	data: () => {
