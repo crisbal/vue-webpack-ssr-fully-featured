@@ -71,9 +71,15 @@ module.exports = {
 		//noParse: /es6-promise\.js$/, // avoid webpack shimming process
 		rules: [
 			{
+	      enforce: 'pre',
+  	    test: /\.(vue|js)$/,
+	  	  loader: 'eslint-loader',
+      	exclude: /node_modules/
+      },
+			{
 				test: /\.vue$/,
 				loader: 'vue-loader',
-				options:{
+				options: {
 					preLoaders:{
 						pug: doI18n,
 						html: doI18n
@@ -82,11 +88,8 @@ module.exports = {
 			},
 			{
 				test: /\.js$/,
-				loader: 'buble-loader',
-				exclude: /node_modules/,
-				options: {
-					objectAssign: 'Object.assign'
-				}
+				loader: ['buble-loader?objectAssign=Object.assign'],
+				exclude: /node_modules/
 			},
 			{
 				test: /\.(png|jpg|gif|svg)$/,
