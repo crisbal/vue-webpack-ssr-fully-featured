@@ -24,6 +24,19 @@ const commonPlugins = [
 	})
 ]
 
+const doI18n = StringReplacePlugin.replace({
+	replacements: [{
+    pattern: /\$\{([\w.]+)\}/g,
+    replacement: function (match, translationKey, offset, string) {
+    	let phrase = polyglot.t(translationKey)
+    	if (phrase == translationKey) {
+    		console.log(`Undefined translation key '${translationKey}' in '${config.language.filename}.json'`)
+    	}
+      return phrase;
+    }
+  }]
+})
+
 module.exports = {
 	devtool: isProduction
 		? false
@@ -59,26 +72,11 @@ module.exports = {
 		rules: [
 			{
 				test: /\.vue$/,
-				loader: 'vue-loader?interpolate',
-				//options: vueConfig
+				loader: 'vue-loader',
 				options:{
 					preLoaders:{
-						html: StringReplacePlugin.replace({
-            	replacements: [{
-                pattern: /\$\{([\w.]+)\}/g,
-                replacement: function (match, translationKey, offset, string) {
-                	let phrase = polyglot.t(translationKey)
-                	if (phrase == translationKey) {
-                		console.log(`Undefined translation key '${translationKey}' in '${config.language.filename}.json'`)
-                		/*phrase = polyglotFB.t(translationKey)
-                		if (phrase == translationKey) {
-                			console.error(`Undefined FALLBACK translation key '${translationKey}' in '${buildLanguageFB}.json'`)
-                		}*/
-                	}
-                  return phrase;
-                }
-              }]
-      	    })
+						pug: doI18n,
+						html: doI18n
           }
 				}
 			},

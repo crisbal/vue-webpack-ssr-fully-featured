@@ -27,6 +27,7 @@
     "memory-fs": "^0.4.1",
     "node-polyglot": "^2.2.2",
     "node-sass": "^4.5.1",
+    "pug": "^2.0.0-beta11",
     "rimraf": "^2.6.1",
     "sass-loader": "^6.0.3",
     "string-replace-webpack-plugin": "^0.1.3",
