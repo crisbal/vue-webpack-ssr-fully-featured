@@ -38,7 +38,7 @@
 
 <script>
 export default {
-	name: "Showcase",
+	name: 'Showcase',
 	data: () => {
 		return {
 			counter: 0

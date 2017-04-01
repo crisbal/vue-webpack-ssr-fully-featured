@@ -8,7 +8,7 @@ const store = new Vuex.Store({
 	},
 
 	actions: {
-		/*// ensure data for rendering given list type
+		/* // ensure data for rendering given list type
 		FETCH_LIST_DATA: ({ commit, dispatch, state }, { type }) => {
 			commit('SET_ACTIVE_TYPE', { type })
 			return fetchIdsByType(type)
@@ -48,11 +48,11 @@ const store = new Vuex.Store({
 			return state.users[id]
 				? Promise.resolve(state.users[id])
 				: fetchUser(id).then(user => commit('SET_USER', { user }))
-		}*/
+		} */
 	},
 
 	mutations: {
-		/*SET_ACTIVE_TYPE: (state, { type }) => {
+		/* SET_ACTIVE_TYPE: (state, { type }) => {
 			state.activeType = type
 		},
 
@@ -70,13 +70,13 @@ const store = new Vuex.Store({
 
 		SET_USER: (state, { user }) => {
 			Vue.set(state.users, user.id, user)
-		}*/
+		} */
 	},
 
 	getters: {
 		// ids of the items that should be currently displayed based on
 		// current list type and current pagination
-		/*activeIds (state) {
+		/* activeIds (state) {
 			const { activeType, itemsPerPage, lists } = state
 			const page = Number(state.route.params.page) || 1
 			if (activeType) {
@@ -92,7 +92,7 @@ const store = new Vuex.Store({
 		// this Array may not be fully fetched.
 		activeItems (state, getters) {
 			return getters.activeIds.map(id => state.items[id]).filter(_ => _)
-		}*/
+		} */
 	}
 })
 

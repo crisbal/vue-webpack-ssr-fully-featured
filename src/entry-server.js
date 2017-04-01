@@ -7,7 +7,7 @@ const isDev = process.env.NODE_ENV !== 'production'
 // state of our application before actually rendering it.
 // Since data fetching is async, this function is expected to
 // return a Promise that resolves to the app instance.
-export default context => {
+export default (context) => {
 	const s = isDev && Date.now()
 
 	return new Promise((resolve, reject) => {
@@ -25,7 +25,7 @@ export default context => {
 			// A preFetch hook dispatches a store action and returns a Promise,
 			// which is resolved when the action is complete and store state has been
 			// updated.
-			Promise.all(matchedComponents.map(component => {
+			Promise.all(matchedComponents.map((component) => {
 				return component.preFetch && component.preFetch(store)
 			})).then(() => {
 				isDev && console.log(`Data pre-fetch: ${Date.now() - s}ms`)
