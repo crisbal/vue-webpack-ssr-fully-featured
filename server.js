@@ -6,8 +6,12 @@ const compression = require('compression')
 const resolve = file => path.resolve(__dirname, file)
 
 const config = require('./config')
-
 const isProduction = config.isProduction
+
+var _resolve
+var readyPromise = new Promise(resolve => {
+  _resolve = resolve
+})
 
 const serverInfo =
 	`express/${require('express/package.json').version} ` +
@@ -25,11 +29,13 @@ if (isProduction) {
 	// build assets and output as dist/index.html.
 	const template = fs.readFileSync(resolve('./_dist/index.html'), 'utf-8')
 	renderer = createRenderer(bundle, template)
+	_resolve()
 } else {
 	// In development: setup the dev server with watch and hot-reload,
 	// and create a new renderer on bundle / index template update.
 	require('./build/setup-dev-server')(app, (bundle, template) => {
 		renderer = createRenderer(bundle, template)
+		_resolve()
 	})
 }
 
@@ -83,7 +89,14 @@ app.get('*', (req, res) => {
 		.pipe(res)
 })
 
-const port = process.env.PORT || 8080
-app.listen(port, () => {
+const port = config.server.port
+var server = app.listen(port, () => {
 	console.log(`Server started at localhost:${port}`)
 })
+
+module.exports = {
+  ready: readyPromise,
+  close: () => {
+    server.close()
+  }
+}

@@ -31,5 +31,9 @@ module.exports = {
 	language: language,
 
 	nodeEnv: nodeEnv,
-	isProduction: nodeEnv === 'production'
+	isProduction: nodeEnv === 'production',
+
+	server: {
+		port: process.env.SERVER_PORT || 8080
+	}
 }
