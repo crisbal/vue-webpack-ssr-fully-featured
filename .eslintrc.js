@@ -36,7 +36,13 @@ module.exports = {
   	// force space after and before curly braces in object/dict declarations
   	'object-curly-spacing': ['error', 'always'],
 
-    // allow debugger during development
-    'no-debugger': config.isProduction ? 2 : 0
+    // allow debugger; instruction during development
+    'no-debugger': config.isProduction ? 2 : 0,
+
+    // force "===" in comparisons when ambiguous
+    'eqeqeq': ['error', 'smart'],
+
+    // force double quotes
+    'quotes': ['error': 'double']
   }
 }
