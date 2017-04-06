@@ -24,7 +24,7 @@ const commonPlugins = [
 		"LANGUAGE_ISRTL": config.language.isRTL,
 	}),
 	new StyleLintPlugin({
-		files: ["**/*.vue", "**/*.scss"]
+		files: ["src/**/*.vue", "src/**/*.scss"]
 	}),
 ]
 
