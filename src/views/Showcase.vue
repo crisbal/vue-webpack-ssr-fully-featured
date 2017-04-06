@@ -30,7 +30,7 @@
 		background-color: #f2f2f2;
 	}
 
-	&__description{
+	&__description {
 		font-style: italic;
 	}
 }

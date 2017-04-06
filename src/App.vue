@@ -20,7 +20,7 @@
 	font-size: 1.5rem;
 	background-color: whitesmoke;
 
-	&__link{
+	&__link {
 		color: black;
 	}
 
