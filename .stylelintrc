@@ -1,7 +1,9 @@
 {
+	"processors": ["stylelint-processor-html"],
+
 	"rules": {
 		"color-no-invalid-hex": true,
-		"font-family-names-quotes": "always-unless-keyword",
+		"font-family-name-quotes": "always-unless-keyword",
 		"string-quotes": "double",
 		"number-leading-zero": "always",
 		"length-zero-no-unit": true,
@@ -20,16 +22,19 @@
 		"block-closing-brace-empty-line-before": "never",
 
 		"block-no-empty": true,
+		"block-opening-brace-newline-before": "never-single-line",
 		"block-opening-brace-newline-after": "always",
+		"block-opening-brace-space-before": "always",
 		"block-closing-brace-newline-before": "always",
-
 		"block-closing-brace-newline-after": "always",
-		"block-opening-brace-newline-after": "always",
 
 		"selector-attribute-brackets-space-inside": "never",
 		"selector-attribute-quotes": "always",
+		"selector-combinator-space-after": "always",
 		"rule-empty-line-before": "always",
 
-		"max-empty-lines": 2
+		"max-empty-lines": 2,
+
+		"indentation": "tab"
 	}
 }

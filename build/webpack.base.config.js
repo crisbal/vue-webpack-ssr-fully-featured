@@ -3,6 +3,7 @@ const webpack = require("webpack")
 
 const FriendlyErrorsPlugin = require("friendly-errors-webpack-plugin")
 const StringReplacePlugin = require("string-replace-webpack-plugin")
+const StyleLintPlugin = require('stylelint-webpack-plugin')
 
 const Polyglot = require("node-polyglot")
 
@@ -21,7 +22,10 @@ const commonPlugins = [
 
 		"LANGUAGE_FILENAME": JSON.stringify(config.language.filename),
 		"LANGUAGE_ISRTL": config.language.isRTL,
-	})
+	}),
+	new StyleLintPlugin({
+		files: ["**/*.vue", "**/*.scss"]
+	}),
 ]
 
 const doI18n = StringReplacePlugin.replace({
