@@ -20,18 +20,18 @@ const messages = {
 	"primaryLanguage": require(`./../i18n/${LANGUAGE_FILENAME}.json`)
 }
 const i18n = new VueI18n({
-  locale: "primaryLanguage",
-  messages,
+	locale: "primaryLanguage",
+	messages
 })
 
 // create the app instance.
 // here we inject the router and store to all child components,
 // making them available everywhere as `this.$router` and `this.$store`.
 const app = new Vue({
-  router,
-  store,
-  i18n,
-  render: (h) => h(App)
+	router,
+	store,
+	i18n,
+	render: (h) => h(App)
 })
 
 
