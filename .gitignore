@@ -3,3 +3,4 @@ node_modules/
 _dist/
 npm-debug.log
 selenium-debug.log
+test/e2e/reports
