@@ -25,7 +25,7 @@ module.exports = {
 		"semi": ["error", "never"],
 
 		// don"t require comma in the last line of an object/dictionary declaration
-		"comma-dangle": 0,
+		"comma-dangle": ["error", "never"],
 
 		// ignore max-len for comments
 		"max-len": [
@@ -43,6 +43,8 @@ module.exports = {
 		"eqeqeq": ["error", "smart"],
 
 		// force double quotes
-		"quotes": ["error", "double"]
+		"quotes": ["error", "double"],
+
+		"indent": ["error", "tab"]
 	}
 }
