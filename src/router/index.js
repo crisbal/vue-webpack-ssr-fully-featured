@@ -1,5 +1,5 @@
-import Vue from 'vue'
-import Router from 'vue-router'
+import Vue from "vue"
+import Router from "vue-router"
 
 Vue.use(Router)
 
@@ -15,14 +15,14 @@ Vue.use(Router)
 // If using Babel, `import()` can be supported via
 // babel-plugin-syntax-dynamic-import.
 
-const Home = () => System.import('views/Home.vue')
-const Showcase = () => System.import('views/Showcase.vue')
+const Home = () => System.import("views/Home.vue")
+const Showcase = () => System.import("views/Showcase.vue")
 
 export default new Router({
-	mode: 'history',
+	mode: "history",
 	scrollBehavior: () => ({ y: 0 }),
 	routes: [
-		{ path: '/', component: Home },
-		{ path: '/showcase', component: Showcase }
+		{ path: "/", component: Home },
+		{ path: "/showcase", component: Showcase }
 	]
 })

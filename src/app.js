@@ -1,11 +1,11 @@
-import Vue from 'vue'
-import VueI18n from 'vue-i18n'
+import Vue from "vue"
+import VueI18n from "vue-i18n"
 
-import store from './store'
-import router from './router'
-import { sync } from 'vuex-router-sync'
+import store from "./store"
+import router from "./router"
+import { sync } from "vuex-router-sync"
 
-import App from './App.vue'
+import App from "./App.vue"
 
 // sync the router with the vuex store.
 // this registers `store.state.route`
@@ -14,13 +14,13 @@ sync(store, router)
 // allow i18n for components
 Vue.use(VueI18n)
 
-// we use 'primaryLanguage' as a key because it does not really matter
+// we use "primaryLanguage" as a key because it does not really matter
 // we can do this since the file is loaded using the `LANGUAGE_FILENAME` key
 const messages = {
-	'primaryLanguage': require(`./../i18n/${LANGUAGE_FILENAME}.json`)
+	"primaryLanguage": require(`./../i18n/${LANGUAGE_FILENAME}.json`)
 }
 const i18n = new VueI18n({
-  locale: 'primaryLanguage',
+  locale: "primaryLanguage",
   messages,
 })
 

@@ -47,7 +47,7 @@
 
 <script>
 export default {
-	name: 'App',
+	name: "App",
 	data: () => {
 		return {
 			isRTL: LANGUAGE_ISRTL

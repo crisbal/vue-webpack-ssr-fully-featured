@@ -1,32 +1,32 @@
 const config = require("../../config")
 
 module.exports = {
-	src_folders: ['test/e2e/specs'],
-	output_folder: 'test/e2e/reports',
+	src_folders: ["test/e2e/specs"],
+	output_folder: "test/e2e/reports",
 
 	selenium: {
 		start_process: true,
-		server_path: require('selenium-server').path,
-		host: '127.0.0.1',
+		server_path: require("selenium-server").path,
+		host: "127.0.0.1",
 		port: 4444,
 		cli_args: {
-			'webdriver.chrome.driver': require('chromedriver').path
+			"webdriver.chrome.driver": require("chromedriver").path
 		}
 	},
 
 	test_settings: {
 		default: {
 			selenium_port: 4444,
-			selenium_host: 'localhost',
+			selenium_host: "localhost",
 			silent: true,
 			globals: {
-				serverURL: 'http://localhost:' + config.server.port
+				serverURL: "http://localhost:" + config.server.port
 			}
 		},
 
 		chrome: {
 			desiredCapabilities: {
-				browserName: 'chrome',
+				browserName: "chrome",
 				javascriptEnabled: true,
 				acceptSslCerts: true
 			}
@@ -34,7 +34,7 @@ module.exports = {
 
 		firefox: {
 			desiredCapabilities: {
-				browserName: 'firefox',
+				browserName: "firefox",
 				javascriptEnabled: true,
 				acceptSslCerts: true
 			}

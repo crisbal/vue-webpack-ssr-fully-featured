@@ -12,7 +12,7 @@
 					| {{ $tc("showcase_dynamic", counter, { counter }) }}
 					br
 					label Elements:
-					input(type='number', v-model='counter', id="counter")
+					input(type="number", v-model="counter", id="counter")
 				.feature__description
 					| The above translation is generated using the state of the `input` element. Both the server and the client will render this, dynamically.
 </template>
@@ -38,7 +38,7 @@
 
 <script>
 export default {
-	name: 'Showcase',
+	name: "Showcase",
 	data: () => {
 		return {
 			counter: 0
