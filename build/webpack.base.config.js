@@ -59,8 +59,8 @@ module.exports = {
 
 	output: {
 		path: path.resolve(__dirname, "../_dist"),
-		publicPath: "/dist/",
-		filename: "[name].[chunkhash].js"
+		publicPath: "/",
+		filename: "js/[name].[chunkhash:16].js"
 	},
 
 	resolve: {
@@ -72,7 +72,7 @@ module.exports = {
 	},
 
 	module: {
-		//noParse: /es6-promise\.js$/, // avoid webpack shimming process
+		noParse: /es6-promise\.js$/, // avoid webpack shimming process
 		rules: [
 			{
 				enforce: "pre",
@@ -100,14 +100,14 @@ module.exports = {
 				loader: "url-loader",
 				options: {
 					limit: 10000,
-					name: "[name].[ext]?[hash]"
+					name: "img/[name].[hash:16].[ext]"
 				}
 			}
 		]
 	},
 
 	performance: {
-		maxEntrypointSize: 300000,
+		maxEntrypointSize: 250000,
 		hints: isProduction ? "warning" : false
 	},
 

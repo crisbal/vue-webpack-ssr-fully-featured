@@ -36,8 +36,21 @@ if (process.env.NODE_ENV === "production") {
 		new SWPrecachePlugin({
 			cacheId: "vue-wikitolearn",
 			filename: "service-worker.js",
+			minify: true,
+			staticFileGlobs: ['_dist/**/*.{js,css,png}'],
+			stripPrefix: '_dist/',
 			dontCacheBustUrlsMatching: /./,
-			staticFileGlobsIgnorePatterns: [/index\.html$/, /\.map$/]
+			navigateFallback: "/",
+			runtimeCaching: [{
+				urlPattern: /./,
+				handler: 'networkFirst',
+				options: {
+					cache: {
+						maxEntries: 10,
+			 			name: 'wtl-cache'
+					}
+				}
+			}]
 		})
 	)
 }

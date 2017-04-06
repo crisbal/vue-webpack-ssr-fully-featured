@@ -54,14 +54,7 @@ const serve = (path, cache) => express.static(resolve(path), {
 	maxAge: cache && isProduction ? 60 * 60 * 24 * 30 : 0
 })
 
-app.use(compression({ threshold: 0 }))
-//app.use(favicon('./static/logo.png'))
-app.use('/dist', serve('./_dist', true))
-app.use('/static', serve('./static', true))
-app.use('/manifest.json', serve('./manifest.json', true))
-app.use('/service-worker.js', serve('./_dist/service-worker.js'))
-
-app.get('*', (req, res) => {
+function render (req, res) {
 	if (!renderer) {
 		return res.end('Waiting for compilation... Refresh in a moment.')
 	}
@@ -87,7 +80,17 @@ app.get('*', (req, res) => {
 		.on('error', errorHandler)
 		.on('end', () => console.log(`Whole request: ${Date.now() - s}ms`))
 		.pipe(res)
-})
+}
+
+app.use(compression({ threshold: 0 }))
+//app.use(favicon('./static/logo.png'))
+
+app.use('/img', serve('./_dist/img', true))
+app.use('/js', serve('./_dist/js', true))
+app.use('/manifest.json', serve('./manifest.json', true))
+app.use('/service-worker.js', serve('./_dist/service-worker.js'))
+
+app.get('*', render)
 
 const port = config.server.port
 var server = app.listen(port, () => {
