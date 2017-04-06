@@ -1,20 +1,20 @@
 <template lang="pug">
 	main.view--Showcase
-	  h1 This is a showcase for the current features
-	  section.showcase__features
-	    .feature.feature--static-translation
-	      .feature__name This is a statically translated string: ${showcase_static}
-	      .feature__description
-	        | The above string is translated at compile time, no additional computation is needed not from the server or from the client.
-	    .feature.feature--dynamic-translation
-	      .feature__name
-	        | This is a dynamically translated string:
-	        | {{ $tc("showcase_dynamic", counter, { counter }) }}
-	        br
-	        label Elements:
-	        input(type='number', v-model='counter', id="counter")
-	      .feature__description
-	        | The above translation is generated using the state of the `input` element. Both the server and the client will render this, dynamically.
+		h1 This is a showcase for the current features
+		section.showcase__features
+			.feature.feature--static-translation
+				.feature__name This is a statically translated string: ${showcase_static}
+				.feature__description
+					| The above string is translated at compile time, no additional computation is needed not from the server or from the client.
+			.feature.feature--dynamic-translation
+				.feature__name
+					| This is a dynamically translated string:
+					| {{ $tc("showcase_dynamic", counter, { counter }) }}
+					br
+					label Elements:
+					input(type='number', v-model='counter', id="counter")
+				.feature__description
+					| The above translation is generated using the state of the `input` element. Both the server and the client will render this, dynamically.
 </template>
 
 <style lang="sass" scoped>

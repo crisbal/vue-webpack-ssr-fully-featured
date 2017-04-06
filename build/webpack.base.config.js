@@ -26,15 +26,15 @@ const commonPlugins = [
 
 const doI18n = StringReplacePlugin.replace({
 	replacements: [{
-    pattern: /\$\{([\w.]+)\}/g,
-    replacement: function (match, translationKey, offset, string) {
-    	let phrase = polyglot.t(translationKey)
-    	if (phrase == translationKey) {
-    		console.log(`Undefined translation key '${translationKey}' in '${config.language.filename}.json'`)
-    	}
-      return phrase;
-    }
-  }]
+		pattern: /\$\{([\w.]+)\}/g,
+		replacement: function (match, translationKey, offset, string) {
+			let phrase = polyglot.t(translationKey)
+			if (phrase == translationKey) {
+				console.log(`Undefined translation key '${translationKey}' in '${config.language.filename}.json'`)
+			}
+			return phrase;
+		}
+	}]
 })
 
 module.exports = {
@@ -45,11 +45,11 @@ module.exports = {
 	entry: {
 		app: './src/entry-client.js',
 		vendor: [
-      'es6-promise/auto',
+			'es6-promise/auto',
 			'vue',
 			'vue-router',
-      'vuex',
-      'vuex-router-sync'
+			'vuex',
+			'vuex-router-sync'
 		]
 	},
 
@@ -71,11 +71,11 @@ module.exports = {
 		//noParse: /es6-promise\.js$/, // avoid webpack shimming process
 		rules: [
 			{
-	      enforce: 'pre',
-  	    test: /\.(vue|js)$/,
-	  	  loader: 'eslint-loader',
-      	exclude: /node_modules/
-      },
+				enforce: 'pre',
+				test: /\.(vue|js)$/,
+				loader: 'eslint-loader',
+				exclude: /node_modules/
+			},
 			{
 				test: /\.vue$/,
 				loader: 'vue-loader',
@@ -83,7 +83,7 @@ module.exports = {
 					preLoaders:{
 						pug: doI18n,
 						html: doI18n
-          }
+					}
 				}
 			},
 			{
