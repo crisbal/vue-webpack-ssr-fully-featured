@@ -51,8 +51,8 @@ module.exports = {
 	},
 
 	output: {
-		path: path.resolve(__dirname, "../_dist"),
-		publicPath: "/",
+		path: path.resolve(__dirname, "../dist"),
+		publicPath: "/dist/",
 		filename: "js/[name].[chunkhash:16].js"
 	},
 

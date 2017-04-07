@@ -1,6 +1,6 @@
 .DS_Store
 node_modules/
-_dist/
+dist/
 npm-debug.log
 selenium-debug.log
 test/e2e/reports

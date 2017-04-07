@@ -56,10 +56,9 @@ if (config.isProduction) {
 			minify: true,
 
 			staticFileGlobs: [
-				'_dist/**/*.{js,css}',
-				'_dist/img/**/*'
+				'dist/**/*.{js,css}',
+				'dist/img/**/*'
 			],
-			stripPrefix: '_dist/',
 
 			dontCacheBustUrlsMatching: /./,
 			navigateFallback: "/",
