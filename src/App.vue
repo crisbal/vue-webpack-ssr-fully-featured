@@ -3,9 +3,9 @@
 		header.Header
 			// TODO: move Header to its own component
 			router-link.Header__link(to="/")
-				img.Header__logo(src="~static/logo.png")
+				img.Header__logo(src="~images/logo.png")
 				div.Header__name
-					img.Header__title(src="~static/name.svg")
+					img.Header__title(src="~images/name.svg")
 					div.Header__subtitle ${site_subtitle}
 		transition
 			router-view.view

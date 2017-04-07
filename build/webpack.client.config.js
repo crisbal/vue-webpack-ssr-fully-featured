@@ -56,17 +56,19 @@ if (config.isProduction) {
 			minify: true,
 
 			staticFileGlobs: [
-				'dist/**/*.{js,css}',
+				'dist/**.css',
+				'dist/**.js',
 				'dist/img/**/*'
 			],
-
-			dontCacheBustUrlsMatching: /./,
-			navigateFallback: "/",
 
 			runtimeCaching: [{
 				urlPattern: '/*',
 				handler: 'cacheFirst'
 			}],
+
+			dontCacheBustUrlsMatching: /./,
+			navigateFallback: "/"
+
 		})
 	)
 }

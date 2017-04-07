@@ -59,6 +59,7 @@ module.exports = {
 	resolve: {
 		alias: {
 			"static": path.resolve(__dirname, "../static"),
+			"images": path.resolve(__dirname, "../src/images"),
 			"styles": path.resolve(__dirname, "../src/styles"),
 			"views": path.resolve(__dirname, "../src/views")
 		}
