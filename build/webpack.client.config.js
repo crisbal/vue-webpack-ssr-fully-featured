@@ -7,6 +7,14 @@ const SWPrecachePlugin = require("sw-precache-webpack-plugin")
 const base = require("./webpack.base.config")
 const config = require("../config")
 
+// minify options to be used in production mode
+// https://github.com/kangax/html-minifier#options-quick-reference
+const minifyOptions = {
+	collapseWhitespace: true,
+	removeComments: true,
+	ignoreCustomComments: [/vue-ssr-outlet/]
+}
+
 const clientConfig = merge(base, {
 	plugins: [
 		// strip dev-only code in Vue source
@@ -14,17 +22,26 @@ const clientConfig = merge(base, {
 			"process.env.VUE_ENV": "'client'",
 		}),
 		// extract vendor chunks for better caching
+		// https://github.com/Narkoleptika/webpack-everything/commit/b7902f60806cf40b9d1abf8d6bb2a094d924fff7
 		new webpack.optimize.CommonsChunkPlugin({
-			name: "vendor"
+				name: 'vendor',
+				minChunks: function(module) {
+					return module.context && module.context.indexOf('node_modules') !== -1
+				}
+		}),
+		// any other js goes here
+		new webpack.optimize.CommonsChunkPlugin({
+			name: 'manifest'
 		}),
 		// generate output HTML
 		new HTMLPlugin({
-			template: "src/index.template.html"
+			template: "src/index.template.html",
+			minify: config.isProduction ? minifyOptions : {}
 		})
 	]
 })
 
-if (process.env.NODE_ENV === "production") {
+if (config.isProduction) {
 	clientConfig.plugins.push(
 		// minify JS
 		new webpack.optimize.UglifyJsPlugin({
@@ -38,7 +55,10 @@ if (process.env.NODE_ENV === "production") {
 			filename: "service-worker.js",
 			minify: true,
 
-			staticFileGlobs: ['_dist/**/*.{js,css,png}'],
+			staticFileGlobs: [
+				'_dist/**/*.{js,css}',
+				'_dist/img/**/*'
+			],
 			stripPrefix: '_dist/',
 
 			dontCacheBustUrlsMatching: /./,

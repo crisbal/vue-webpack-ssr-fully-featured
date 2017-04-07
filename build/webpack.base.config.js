@@ -48,13 +48,6 @@ module.exports = {
 
 	entry: {
 		app: "./src/entry-client.js",
-		vendor: [
-			"es6-promise/auto",
-			"vue",
-			"vue-router",
-			"vuex",
-			"vuex-router-sync"
-		]
 	},
 
 	output: {
@@ -92,11 +85,14 @@ module.exports = {
 			},
 			{
 				test: /\.js$/,
-				loader: ["buble-loader?objectAssign=Object.assign"],
+				loader: 'buble-loader',
+				options: {
+					objectAssign: 'Object.assign'
+				},
 				exclude: /node_modules/
 			},
 			{
-				test: /\.(png|jpg|gif|svg)$/,
+				test: /\.(png|jpe?g|gif|svg|ico)(\?.*)?$/,
 				loader: "url-loader",
 				options: {
 					limit: 10000,
