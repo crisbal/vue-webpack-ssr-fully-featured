@@ -37,20 +37,17 @@ if (process.env.NODE_ENV === "production") {
 			cacheId: "vue-wikitolearn",
 			filename: "service-worker.js",
 			minify: true,
+
 			staticFileGlobs: ['_dist/**/*.{js,css,png}'],
 			stripPrefix: '_dist/',
+
 			dontCacheBustUrlsMatching: /./,
 			navigateFallback: "/",
+
 			runtimeCaching: [{
-				urlPattern: /./,
-				handler: 'networkFirst',
-				options: {
-					cache: {
-						maxEntries: 10,
-			 			name: 'wtl-cache'
-					}
-				}
-			}]
+				urlPattern: '/*',
+				handler: 'cacheFirst'
+			}],
 		})
 	)
 }
