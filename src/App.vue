@@ -6,7 +6,7 @@
 				img.Header__logo(src="~images/logo.png")
 				div.Header__name
 					img.Header__title(src="~images/name.svg")
-					div.Header__subtitle ${site_subtitle}
+					div.Header__subtitle $t("site_subtitle")
 		transition
 			router-view.view
 </template>

@@ -5,14 +5,22 @@ const FriendlyErrorsPlugin = require("friendly-errors-webpack-plugin")
 const StringReplacePlugin = require("string-replace-webpack-plugin")
 const StyleLintPlugin = require('stylelint-webpack-plugin')
 
-const Polyglot = require("node-polyglot")
-
+const Vue = require("vue")
+const VueI18n = require("vue-i18n")
 const config = require("../config")
-
 const isProduction = config.isProduction
 
-const phrases = require(`./../i18n/${config.language.filename}.json`)
-let polyglot = new Polyglot({ phrases: phrases });
+const messages = {
+	main:	require(`../i18n/${config.language.filename}`),
+	fallback: config.fallbackLanguage ? require(`../i18n/${config.fallbackLanguage.filename}`) : null
+}
+
+Vue.use(VueI18n)
+i18n = new VueI18n({
+	locale: 'main',
+	fallbackLocale: messages.fallback ? 'fallback' : null,
+	messages
+})
 
 const commonPlugins = [
 	new StringReplacePlugin(),
@@ -20,7 +28,8 @@ const commonPlugins = [
 		"process.env.NODE_ENV": JSON.stringify(config.nodeEnv),
 		"PRODUCTION": config.isProduction,
 
-		"LANGUAGE_FILENAME": JSON.stringify(config.language.filename),
+		"LANGUAGE_MAIN_FILENAME": JSON.stringify(config.language.filename),
+		"LANGUAGE_FALLBACK_FILENAME": config.fallbackLanguage ? JSON.stringify(config.fallbackLanguage.filename) : null,
 		"LANGUAGE_ISRTL": config.language.isRTL,
 	}),
 	new StyleLintPlugin({
@@ -30,13 +39,20 @@ const commonPlugins = [
 
 const doI18n = StringReplacePlugin.replace({
 	replacements: [{
-		pattern: /\$\{([\w.]+)\}/g,
-		replacement: function (match, translationKey, offset, string) {
-			let phrase = polyglot.t(translationKey)
-			if (phrase == translationKey) {
-				console.log(`Undefined translation key "${translationKey}" in "${config.language.filename}.json"`)
+		pattern: /\$t\((.+)\)/g,
+		replacement: function (fullMatch, params, offset, string) {
+			params = params.split(",").map(p => eval(p))
+			if (i18n.tc(...params) == params[0]) {
+				// check if the translation key is defined
+				// We could have used i18n.te but it does not account for fallback languages
+				// We are using this instead. Uglier but does the job
+				if (config.isProduction) {
+					throw new Error(`[i18n] Translation key '${params[0]}' does not exist`)
+				} else { // just warn in development mode
+					console.warn(`[i18n] Translation key '${params[0]}' does not exist`)
+				}
 			}
-			return phrase;
+			return i18n.tc(...params)
 		}
 	}]
 })
@@ -108,7 +124,7 @@ module.exports = {
 		hints: isProduction ? "warning" : false
 	},
 
-	plugins: isProduction ? commonPlugins : commonPlugins.concat([
+	plugins: config.isProduction ? commonPlugins : commonPlugins.concat([
 		new FriendlyErrorsPlugin()
 	])
 }

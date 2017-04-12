@@ -17,10 +17,10 @@ Vue.use(VueI18n)
 // we use "primaryLanguage" as a key because it does not really matter
 // we can do this since the file is loaded using the `LANGUAGE_FILENAME` key
 const messages = {
-	"primaryLanguage": require(`./../i18n/${LANGUAGE_FILENAME}.json`)
+	"main": require(`./../i18n/${LANGUAGE_MAIN_FILENAME}.json`)
 }
 const i18n = new VueI18n({
-	locale: "primaryLanguage",
+	locale: "main",
 	messages
 })
 
