@@ -19,13 +19,13 @@ module.exports = {
 
 			.assert.containsText(".feature--dynamic-translation",
 				"This is a dynamically translated string: no elements")
+
 			.clearValue(".feature--dynamic-translation input[type=number]")
-			.pause(1500)
 			.setValue(".feature--dynamic-translation input[type=number]", 1)
 			.assert.containsText(".feature--dynamic-translation",
 				"This is a dynamically translated string: single element")
+
 			.clearValue(".feature--dynamic-translation input[type=number]")
-			.pause(1500)
 			.setValue(".feature--dynamic-translation input[type=number]", 2)
 			.assert.containsText(".feature--dynamic-translation",
 				"This is a dynamically translated string: 2 elements")
