@@ -39,7 +39,7 @@ const commonPlugins = [
 
 const doI18n = StringReplacePlugin.replace({
 	replacements: [{
-		pattern: /\$t\((.+)\)/g,
+		pattern: /\$ts\((.+)\)/g,
 		replacement: function (fullMatch, params, offset, string) {
 			params = params.split(",").map(p => eval(p))
 			if (i18n.tc(...params) == params[0]) {
