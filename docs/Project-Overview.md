@@ -2,20 +2,26 @@
 
 ## Technological stack
 
-### Frontend
+**Frontend**
 
 * Vue.js
-* HTML
-	* Maybe move to Pug?
+	* Routing with vue-router
+	* Store with vuex
+	* Fetching HTTP data with axios
+* Pug
 * Sass
 
-### Backend
+**Backend**
 
 * Node
+	* Express
+	* Vue SSR (Server Side Rendering)
 
-### Build process
+**Build process**
 
-### Serving
+There are two build process, the first is the build process for the client and the second is the one for the server.
+
+* Webpack
 
 ## Project Structure
 
@@ -28,12 +34,20 @@
 	* `i18n/`, localization files
 	* `src/`, source file for the project
 		* `components/`, reusable Vue UI components
-		* `router/`, Vue-Router specific files
+		* `images/`, images used by the application
+			* These will be processed by webpack's `url-loader`
+		* `router/`, Vue-router specific files
 		* `store/`, Vuex specific files
 		* `styles/`, global style declarations
 		* `views/`, Vue components that define the layout of the app
 		* `App.vue`, the main/entry-point component
 		* `app.js`, the script that initializes the whole App
 		* `entry-client.js`, bootstrap script executed by the client only
-		* `entry-server.js`, bootstrap script executed by the server only, used in Server Side rendering
-	* `_dist/`, contains
+		* `entry-server.js`, bootstrap script executed by the server only, used in SSR
+	* `static/`, static files to be served as is
+		* Don't put images required by components here
+	* `tests/`
+		* `e2e/specs/`, Nightwatch end-to-end tests
+	* `dist/`, contains built files
+	* `config.js`, configuration file for building the project
+	* `server.js`, a standard Express server configured for SSR

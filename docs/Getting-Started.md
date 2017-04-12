@@ -1,46 +1,33 @@
 # Getting Started
 
-Please read `Project Overview` first.
+First of all take a quick look at `Project Overview`.
 
-## Installing
+Next I suggest you to get familiar with a few terms that are going to be used in this project by reading the `Glossary`.
 
-### Clone the repo
+## Setting up the project
 
-```
-git clone $URL
-cd $FOLDER
-```
+We recommend the usage of yarn, but npm is fine too.
 
-### Install dependencies
+* Clone the repository
+	* ```
+	git clone $URL
+	cd $FOLDER
+	```
+* Install dependencies
+	* Simply `yarn`
+	* Or `npm install`
 
-If you use `yarn`:
+## Developing
 
-```
-yarn
-```
+* Starting the development instance
+	* `yarn run dev`
+	* Or `npm run dev`
+* Testing
+	* `yarn run test`
 
-If you use `npm`:
+## In production
 
-```
-npm install
-```
-
-### Building
-
-```
-yarn run build
-```
-
-### Serving
-
-```
-yarn run start
-```
-
-### Developing
-
-This will enable autoreload:
-
-```
-yarn run dev
-```
+* Building for production
+	* `yarn run build`
+* Serving
+	* `yarn run start`
