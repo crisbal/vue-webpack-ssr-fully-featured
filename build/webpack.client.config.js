@@ -24,10 +24,10 @@ const clientConfig = merge(base, {
 		// extract vendor chunks for better caching
 		// https://github.com/Narkoleptika/webpack-everything/commit/b7902f60806cf40b9d1abf8d6bb2a094d924fff7
 		new webpack.optimize.CommonsChunkPlugin({
-				name: 'vendor',
-				minChunks: function(module) {
-					return module.context && module.context.indexOf('node_modules') !== -1
-				}
+			name: 'vendor',
+			minChunks: function (module) {
+				return module.context && module.context.indexOf('node_modules') !== -1
+			}
 		}),
 		// any other js goes here
 		new webpack.optimize.CommonsChunkPlugin({

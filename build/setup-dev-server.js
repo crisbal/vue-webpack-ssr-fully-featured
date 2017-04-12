@@ -4,7 +4,7 @@ const MFS = require("memory-fs")
 const clientConfig = require("./webpack.client.config")
 const serverConfig = require("./webpack.server.config")
 
-module.exports = function setupDevServer (app, cb) {
+module.exports = function setupDevServer(app, cb) {
 	let bundle
 	let template
 

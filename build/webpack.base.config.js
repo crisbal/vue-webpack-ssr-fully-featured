@@ -12,7 +12,7 @@ const config = require("../config")
 const isProduction = config.isProduction
 
 const phrases = require(`./../i18n/${config.language.filename}.json`)
-let polyglot = new Polyglot({phrases: phrases});
+let polyglot = new Polyglot({ phrases: phrases });
 
 const commonPlugins = [
 	new StringReplacePlugin(),
@@ -78,7 +78,7 @@ module.exports = {
 				test: /\.vue$/,
 				loader: "vue-loader",
 				options: {
-					preLoaders:{
+					preLoaders: {
 						pug: doI18n,
 						html: doI18n
 					}
