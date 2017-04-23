@@ -24,14 +24,14 @@ const clientConfig = merge(base, {
 		// extract vendor chunks for better caching
 		// https://github.com/Narkoleptika/webpack-everything/commit/b7902f60806cf40b9d1abf8d6bb2a094d924fff7
 		new webpack.optimize.CommonsChunkPlugin({
-			name: 'vendor',
+			name: "vendor",
 			minChunks: function (module) {
-				return module.context && module.context.indexOf('node_modules') !== -1
+				return module.context && module.context.indexOf("node_modules") !== -1
 			}
 		}),
 		// any other js goes here
 		new webpack.optimize.CommonsChunkPlugin({
-			name: 'manifest'
+			name: "manifest"
 		}),
 		// generate output HTML
 		new HTMLPlugin({
@@ -56,14 +56,14 @@ if (config.isProduction) {
 			minify: true,
 
 			staticFileGlobs: [
-				'dist/**.css',
-				'dist/**.js',
-				'dist/img/**/*'
+				"dist/**.css",
+				"dist/**.js",
+				"dist/img/**/*"
 			],
 
 			runtimeCaching: [{
-				urlPattern: '/*',
-				handler: 'cacheFirst'
+				urlPattern: /\/.*/,
+				handler: "networkFirst"
 			}],
 
 			dontCacheBustUrlsMatching: /./,

@@ -3,7 +3,7 @@ const webpack = require("webpack")
 
 const FriendlyErrorsPlugin = require("friendly-errors-webpack-plugin")
 const StringReplacePlugin = require("string-replace-webpack-plugin")
-const StyleLintPlugin = require('stylelint-webpack-plugin')
+const StyleLintPlugin = require("stylelint-webpack-plugin")
 
 const Vue = require("vue")
 const VueI18n = require("vue-i18n")
@@ -17,8 +17,8 @@ const messages = {
 
 Vue.use(VueI18n)
 i18n = new VueI18n({
-	locale: 'main',
-	fallbackLocale: messages.fallback ? 'fallback' : null,
+	locale: "main",
+	fallbackLocale: messages.fallback ? "fallback" : null,
 	messages
 })
 
@@ -47,9 +47,9 @@ const doI18n = StringReplacePlugin.replace({
 				// We could have used i18n.te but it does not account for fallback languages
 				// We are using this instead. Uglier but does the job
 				if (config.isProduction) {
-					throw new Error(`[i18n] Translation key '${params[0]}' does not exist`)
+					throw new Error(`[i18n] Translation key "${params[0]}" does not exist`)
 				} else { // just warn in development mode
-					console.warn(`[i18n] Translation key '${params[0]}' does not exist`)
+					console.warn(`[i18n] Translation key "${params[0]}" does not exist`)
 				}
 			}
 			return i18n.tc(...params)
@@ -103,9 +103,9 @@ module.exports = {
 			},
 			{
 				test: /\.js$/,
-				loader: 'buble-loader',
+				loader: "buble-loader",
 				options: {
-					objectAssign: 'Object.assign'
+					objectAssign: "Object.assign"
 				},
 				exclude: /node_modules/
 			},
