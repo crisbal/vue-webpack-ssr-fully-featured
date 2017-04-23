@@ -77,7 +77,8 @@ module.exports = {
 			"static": path.resolve(__dirname, "../static"),
 			"images": path.resolve(__dirname, "../src/images"),
 			"styles": path.resolve(__dirname, "../src/styles"),
-			"views": path.resolve(__dirname, "../src/views")
+			"views": path.resolve(__dirname, "../src/views"),
+			"components": path.resolve(__dirname, "../src/components")
 		}
 	},
 
