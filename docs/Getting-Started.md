@@ -9,7 +9,8 @@ Next, I suggest you to get familiar with a few terms that are going to be used i
 We recommend the usage of [yarn](https://yarnpkg.com/en/), but npm is fine too.
 
 * Clone the repository
-```git clone $URL
+```
+git clone $URL
 cd $FOLDER
 ```
 * Install dependencies
