@@ -9,4 +9,4 @@ New frontend for WikiToLearn
 
 ## Docs
 
-Check inside the `docs/` folder.
+[Official documentation](docs/Getting-Started.md)

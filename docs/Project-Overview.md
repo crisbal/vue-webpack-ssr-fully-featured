@@ -4,24 +4,32 @@
 
 **Frontend**
 
-* Vue.js
-	* Routing with vue-router
-	* Store with vuex
-	* Fetching HTTP data with axios
-* Pug
-* Sass
+* [Vue.js](https://vuejs.org/)
+	* [ES6 Javascript](http://es6-features.org)
+	* Routing with [vue-router](https://router.vuejs.org/en/)
+	* Store with [vuex](https://vuex.vuejs.org/en/)
+	* Fetching data with [axios](https://github.com/mzabriskie/axios)
+* [Pug](https://pugjs.org/)
+	* For less verbose and easier to read components
+* [Sass](http://sass-lang.com/)
+	* Scss variant
+	* For easier to read styles and also variables and mixins
 
 **Backend**
 
 * Node
-	* Express
-	* Vue SSR (Server Side Rendering)
+	* [Express](https://expressjs.com/)
+		* Configured to work with [Vue Server Side Rendering](https://vuejs.org/v2/guide/ssr.html)
 
 **Build process**
 
-There are two build process, the first is the build process for the client and the second is the one for the server.
+The building process is carried out by [webpack](https://webpack.js.org/).
 
-* Webpack
+There are two sequential build processes, the first is for the *client* and the second is for the *server*.
+
+During the build process all the relevant files will be passed to various linters to check for coding conventions.
+
+For detailed explaination check out the [Build Process](Build-Process.md) documentation page.
 
 ## Project Structure
 
