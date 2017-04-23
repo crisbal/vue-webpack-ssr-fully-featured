@@ -35,7 +35,7 @@
     "memory-fs": "^0.4.1",
     "nightwatch": "^0.9.14",
     "node-polyglot": "^2.2.2",
-    "node-sass": "^4.5.1",
+    "node-sass": "^4.5.2",
     "pug": "^2.0.0-beta11",
     "rimraf": "^2.6.1",
     "sass-loader": "^6.0.3",
