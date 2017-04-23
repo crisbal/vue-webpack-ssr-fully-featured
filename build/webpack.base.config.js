@@ -30,19 +30,19 @@ const commonPlugins = [
 
 		"LANGUAGE_MAIN_FILENAME": JSON.stringify(config.language.filename),
 		"LANGUAGE_FALLBACK_FILENAME": config.fallbackLanguage ? JSON.stringify(config.fallbackLanguage.filename) : null,
-		"LANGUAGE_ISRTL": config.language.isRTL,
+		"LANGUAGE_ISRTL": config.language.isRTL
 	}),
 	new StyleLintPlugin({
 		files: ["src/**/*.vue", "src/**/*.scss"]
-	}),
+	})
 ]
 
 const doI18n = StringReplacePlugin.replace({
 	replacements: [{
 		pattern: /\$ts\((.+)\)/g,
-		replacement: function (fullMatch, params, offset, string) {
-			params = params.split(",").map(p => eval(p))
-			if (i18n.tc(...params) == params[0]) {
+		replacement: function(fullMatch, params, offset, string) {
+			params = params.split(",").map((p) => eval(p))
+			if (i18n.tc(...params) === params[0]) {
 				// check if the translation key is defined
 				// We could have used i18n.te but it does not account for fallback languages
 				// We are using this instead. Uglier but does the job
@@ -63,7 +63,7 @@ module.exports = {
 		: "#cheap-module-eval-source-map", // smaller source map
 
 	entry: {
-		app: "./src/entry-client.js",
+		app: "./src/entry-client.js"
 	},
 
 	output: {

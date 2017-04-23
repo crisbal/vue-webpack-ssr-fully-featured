@@ -19,13 +19,13 @@ const clientConfig = merge(base, {
 	plugins: [
 		// strip dev-only code in Vue source
 		new webpack.DefinePlugin({
-			"process.env.VUE_ENV": "'client'",
+			"process.env.VUE_ENV": "'client'"
 		}),
 		// extract vendor chunks for better caching
 		// https://github.com/Narkoleptika/webpack-everything/commit/b7902f60806cf40b9d1abf8d6bb2a094d924fff7
 		new webpack.optimize.CommonsChunkPlugin({
 			name: "vendor",
-			minChunks: function (module) {
+			minChunks: function(module) {
 				return module.context && module.context.indexOf("node_modules") !== -1
 			}
 		}),
