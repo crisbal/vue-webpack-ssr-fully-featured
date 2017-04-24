@@ -30,7 +30,7 @@ Use the `$ts` (think of it as translate-static) directive.
 
 Example:
 
-```
+```html
 <p>$ts("key-name")</p>
 ```
 
@@ -44,7 +44,7 @@ Since it is dynamic you have to use this inside Vue's double brackets.
 
 Example:
 
-```
+```html
 <p>{{ $ts("key-name") }}</p>
 ```
 
