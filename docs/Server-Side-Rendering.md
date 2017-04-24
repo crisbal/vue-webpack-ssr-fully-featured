@@ -15,6 +15,8 @@ Promise.all(matchedComponents.map((component) => {
 
 The `preFetch` hook will get access to the vuex `store` object to allow the dispatching of vuex action.
 
+**Hint**: the `preFetch` hook won't be called client side, this means that you will also need to define the proper fetching actions in the `beforeMount` hook. Usually you should `preFetch` core data and `beforeMount`-fetch all of the data.
+
 ## Use cases
 
 * Fetching stateless data (page content)
