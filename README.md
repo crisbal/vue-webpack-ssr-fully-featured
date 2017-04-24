@@ -9,4 +9,4 @@ New frontend for WikiToLearn
 
 ## Docs
 
-[Official documentation](docs/Index.md)
+Check out our [official documentation](docs/Index.md)
