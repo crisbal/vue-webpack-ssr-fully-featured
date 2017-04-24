@@ -1,5 +1,5 @@
 <template lang="pug">
-	#app.app(:class="{ 'app--rtl': isRTL }")
+	#app.App(:class="{ 'App--rtl': isRTL }")
 		AppHeader
 		transition
 			router-view.view
