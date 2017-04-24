@@ -11,3 +11,9 @@
 
 * [Localization](Localization.md)
 * [Server Side Rendering](Server-Side-Rendering.md)
+
+## Interesting projects
+
+* [vuejs/vue-hackernews-2.0](https://github.com/vuejs/vue-hackernews-2.0)
+* [vuejs/pwa](https://github.com/vuejs/pwa/)
+* [Narkoleptika/webpack-everything](https://github.com/Narkoleptika/webpack-everything)
