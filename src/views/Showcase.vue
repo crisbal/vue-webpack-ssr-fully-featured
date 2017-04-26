@@ -15,6 +15,7 @@
 					input(type="number", v-model="counter", id="counter")
 				.feature__description
 					| The above translation is generated using the state of the `input` element. Both the server and the client will render this, dynamically.
+		LoginModal
 </template>
 
 <style lang="sass" scoped>
@@ -37,11 +38,19 @@
 </style>
 
 <script>
+import LoginModal from "components/modals/LoginModal.vue"
+import Modal from "components/modals/Modal.vue"
+
 export default {
 	name: "Showcase",
+	components: {
+		LoginModal,
+		Modal
+	},
 	data: () => {
 		return {
-			counter: 0
+			counter: 0,
+			showModal: false
 		}
 	}
 }
