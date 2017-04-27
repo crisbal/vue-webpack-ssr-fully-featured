@@ -29,7 +29,7 @@
 
 	&__name {
 		vertical-align: middle;
-		marging-right: 0.5rem;
+		margin-right: 0.5rem;
 	}
 
 	&__title {
