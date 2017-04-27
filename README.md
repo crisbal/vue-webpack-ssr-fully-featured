@@ -6,7 +6,7 @@ New frontend for WikiToLearn
 
 * Vuex/Store
 * SSR Head tags
-* Commit tags
+* Commit tags/verbs
 
 ## Docs
 
