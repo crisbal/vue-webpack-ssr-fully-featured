@@ -19,7 +19,7 @@
 
 * Node
 	* [Express](https://expressjs.com/)
-		* Configured to work with [Vue Server Side Rendering](https://vuejs.org/v2/guide/ssr.html)
+		* Configured to work with [Vue Server Side Rendering](https://ssr.vuejs.org/en/)
 
 **Build process**
 
@@ -47,6 +47,7 @@ For detailed explaination check out the [Build Process](Build-Process.md) docume
 		* `router/`, Vue-router specific files
 		* `store/`, Vuex specific files
 		* `styles/`, global style declarations
+		* `utils/`, utility functions and Vue mixins
 		* `views/`, Vue components that define the layout of the app
 		* `App.vue`, the main/entry-point component
 		* `app.js`, the script that initializes the whole App
