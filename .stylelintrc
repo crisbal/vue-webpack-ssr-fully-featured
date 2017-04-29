@@ -1,40 +1,14 @@
 {
 	"processors": ["stylelint-processor-html"],
+	"extends": "stylelint-config-standard",
 
 	"rules": {
-		"color-no-invalid-hex": true,
 		"font-family-name-quotes": "always-unless-keyword",
 		"string-quotes": "double",
-		"number-leading-zero": "always",
-		"length-zero-no-unit": true,
 		"value-keyword-case": "lower",
-
-		"unit-case": "lower",
-		"unit-no-unknown": true,
-
-		"declaration-colon-space-after": "always",
-		"declaration-colon-space-before": "never",
-		"declaration-no-important": true,
-		"declaration-block-no-duplicate-properties": true,
-		"declaration-block-semicolon-newline-after": "always",
-		"declaration-block-trailing-semicolon": "always",
-
-		"block-closing-brace-empty-line-before": "never",
-
-		"block-no-empty": true,
-		"block-opening-brace-newline-before": "never-single-line",
-		"block-opening-brace-newline-after": "always",
-		"block-opening-brace-space-before": "always",
-		"block-closing-brace-newline-before": "always",
-		"block-closing-brace-newline-after": "always",
-
-		"selector-attribute-brackets-space-inside": "never",
-		"selector-attribute-quotes": "always",
-		"selector-combinator-space-after": "always",
 		"rule-empty-line-before": "always",
-
 		"max-empty-lines": 2,
-
-		"indentation": "tab"
+		"indentation": "tab",
+		"no-empty-source": null
 	}
 }
