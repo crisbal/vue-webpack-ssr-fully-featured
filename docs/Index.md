@@ -12,6 +12,10 @@
 * [Localization](Localization.md)
 * [Server Side Rendering](Server-Side-Rendering.md)
 
+## Other
+
+* [Benchmarks](Benchmarks.md)
+
 ## Interesting projects
 
 * [vuejs/vue-hackernews-2.0](https://github.com/vuejs/vue-hackernews-2.0)
