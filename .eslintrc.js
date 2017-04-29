@@ -30,7 +30,7 @@ module.exports = {
 		// ignore max-len for comments
 		"max-len": [
 			"error",
-			{ "ignoreComments": true, "ignoreTrailingComments": true }
+			{ "code": 100, "ignoreComments": true, "ignoreTrailingComments": true }
 		],
 
 		// force space after and before curly braces in object/dict declarations
