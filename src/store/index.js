@@ -6,14 +6,17 @@ import { mutations } from "./mutations"
 
 Vue.use(Vuex)
 
-const store = new Vuex.Store({
-	state: {
-		modals: []
-	},
-	actions,
-	mutations
-})
+export function createStore() {
+	return new Vuex.Store({
+		state: {
+			modals: []
+		},
+		actions,
+		mutations
+	})
+}
 
+/*
 if (module.hot) {
 	module.hot.accept([
 		"./actions",
@@ -24,6 +27,4 @@ if (module.hot) {
 			mutations: require("./mutations").mutations
 		})
 	})
-}
-
-export default store
+}*/

@@ -6,6 +6,9 @@
 
 <script>
 export default {
-	name: "Home"
+	name: "Home",
+	title() {
+		return "Home Page!"
+	}
 }
 </script>

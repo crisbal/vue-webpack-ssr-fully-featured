@@ -10,11 +10,13 @@ Vue.use(Router)
 import Home from "views/Home.vue" // include in the main bundle
 const Showcase = () => System.import("views/Showcase.vue") // load dynamically when needed
 
-export default new Router({
-	mode: "history",
-	scrollBehavior: () => ({ y: 0 }),
-	routes: [
-		{ path: "/", component: Home },
-		{ path: "/showcase", component: Showcase }
-	]
-})
+export function createRouter() {
+	return new Router({
+		mode: "history",
+		scrollBehavior: () => ({ y: 0 }),
+		routes: [
+			{ path: "/", component: Home },
+			{ path: "/showcase", component: Showcase }
+		]
+	})
+}

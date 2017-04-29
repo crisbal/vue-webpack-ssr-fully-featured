@@ -45,6 +45,8 @@ module.exports = {
 		// force double quotes
 		"quotes": ["error", "double"],
 
-		"indent": ["error", "tab"]
+		"indent": ["error", "tab"],
+
+		"require-jsdoc": 0
 	}
 }
