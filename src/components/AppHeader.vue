@@ -9,7 +9,7 @@
 
 <style lang="sass">
 .AppHeader {
-	padding: 1rem 1rem;
+	padding: 1rem;
 	font-size: 1.5rem;
 	background-color: whitesmoke;
 
@@ -23,7 +23,8 @@
 		margin-right: 0.5rem;
 	}
 
-	&__name, &__subtitle {
+	&__name,
+	&__subtitle {
 		display: inline-block;
 	}
 

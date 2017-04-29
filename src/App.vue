@@ -11,9 +11,7 @@
 
 noscript {
 	display: block;
-
 	padding: 1rem;
-
 	background-color: red;
 	color: white;
 	font-size: 1.5rem;
