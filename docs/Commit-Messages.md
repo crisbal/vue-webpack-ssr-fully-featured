@@ -26,6 +26,7 @@ When possible the commit message should begin with:
 * `Add`, when adding a feature to an existing file
 * `Fix`, when fixing issues with an existing file
 * `Remove`, when removing features
+* `Update` or `Refactor`, when reworking files
 
 The commit message should always complete the sentence `When applied this commit will... MESSAGE`
 
