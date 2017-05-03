@@ -15,6 +15,8 @@ New frontend for WikiToLearn
 	* Take inspiration from [Element](https://github.com/ElemeFE/element/blob/dev/packages/) or [Quasar](https://github.com/quasarframework/quasar/)
 	* Make tests
 	* Modals and dialogs
+		* We decided to develop a global Toast component with a set of APIs to interact with it (check out Quasar's Toast for inspiration)
+		* Develop a local Modal component (similar to the `modals` branch)
 * Vuex/Store
 	* [Modularize the store](https://vuex.vuejs.org/en/modules.html)
 	* [Make Test](https://vuex.vuejs.org/en/testing.html)
