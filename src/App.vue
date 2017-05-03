@@ -6,7 +6,7 @@
 			router-view.view
 </template>
 
-<style lang="sass">
+<style lang="scss">
 @import "~styles/global";
 
 noscript {

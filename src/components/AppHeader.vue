@@ -7,7 +7,7 @@
 				div.AppHeader__subtitle $ts("site_subtitle")
 </template>
 
-<style lang="sass">
+<style lang="scss">
 .AppHeader {
 	padding: 1rem;
 	font-size: 1.5rem;

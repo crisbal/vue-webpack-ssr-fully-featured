@@ -82,7 +82,11 @@ module.exports = {
 			"utils": path.resolve(__dirname, "../src/utils")
 		}
 	},
-
+	resolveLoader: {
+		alias: {
+			'scss-loader': 'sass-loader'
+		}
+	},
 	module: {
 		noParse: /es6-promise\.js$/, // avoid webpack shimming process
 		rules: [

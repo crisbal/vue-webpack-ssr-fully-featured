@@ -17,7 +17,7 @@
 					| The above translation is generated using the state of the `input` element. Both the server and the client will render this, dynamically.
 </template>
 
-<style lang="sass" scoped>
+<style lang="scss" scoped>
 .feature {
 	padding: 1rem;
 	margin-bottom: 1rem;
