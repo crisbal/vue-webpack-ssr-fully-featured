@@ -17,6 +17,7 @@ export function createStore() {
 }
 
 /*
+// TODO: move to entry-client.js
 if (module.hot) {
 	module.hot.accept([
 		"./actions",
