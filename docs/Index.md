@@ -14,6 +14,7 @@
 
 ## Other
 
+* [Commit Messages](Commit-Messages.md)
 * [Benchmarks](Benchmarks.md)
 
 ## Interesting projects
