@@ -11,7 +11,7 @@ const serverTitleMixin = {
 	created() {
 		const title = getTitle(this)
 		if (title) {
-			this.$root.$options.ssrContext.title = `${title} - WikiToLearn`
+			this.$root.$options.ssrContext.title = `${title} - SiteName`
 		}
 	}
 }
@@ -20,9 +20,7 @@ const clientTitleMixin = {
 	mounted() {
 		const title = getTitle(this)
 		if (title) {
-			document.title = `${title} - WikiToLearn`
-		} else {
-			document.title = "WikiToLearn"
+			document.title = `${title} - SiteName`
 		}
 	}
 }

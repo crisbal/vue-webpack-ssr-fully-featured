@@ -1,6 +1,6 @@
-# wikitolearn-frontend
+# vue-webpack-ssr-fully-featured
 
-New frontend for WikiToLearn
+A fully featured boilerplate PWA project that uses Vue, Vuex, Vue-Router, vue-i18n (for localization), Server Side Rendering and much more
 
 ## Todo
 
@@ -9,14 +9,6 @@ New frontend for WikiToLearn
 		* https://github.com/vuejs-templates/webpack/tree/master/template/test/unit
 		* https://github.com/eddyerburgh/avoriaz
 	* Write test for existing components
-* Work on a simple component library
-	* Buttons, Form, Dropdown, Collapsible and other
-	* Provide and emit events (so that parent can listen to events)
-	* Take inspiration from [Element](https://github.com/ElemeFE/element/blob/dev/packages/) or [Quasar](https://github.com/quasarframework/quasar/)
-	* Make tests
-	* Modals and dialogs
-		* We decided to develop a global Toast component with a set of APIs to interact with it (check out Quasar's Toast for inspiration)
-		* Develop a local Modal component (similar to the `modals` branch)
 * Vuex/Store
 	* [Modularize the store](https://vuex.vuejs.org/en/modules.html)
 	* [Make Test](https://vuex.vuejs.org/en/testing.html)
@@ -24,7 +16,6 @@ New frontend for WikiToLearn
 	* Fix issues with titles
 	* Enable the editing of other meta tags
 		* Check if it is possible?
-* Evaluate external editors for providing editing features
 
 ## Docs
 

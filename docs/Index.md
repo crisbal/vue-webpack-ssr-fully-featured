@@ -1,4 +1,4 @@
-# wikitolearn-frontend
+# vue-webpack-ssr-fully-featured
 
 ## Before you start
 

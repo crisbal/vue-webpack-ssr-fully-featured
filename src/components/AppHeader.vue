@@ -3,7 +3,7 @@
 		router-link.AppHeader__link(to="/")
 			img.AppHeader__logo(src="~images/logo.png")
 			div.AppHeader__name
-				img.AppHeader__title(src="~images/name.svg")
+				h3.AppHeader__title Site Name
 				div.AppHeader__subtitle $ts("site_subtitle")
 </template>
 

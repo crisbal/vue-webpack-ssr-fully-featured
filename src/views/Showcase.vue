@@ -43,6 +43,9 @@ export default {
 		return {
 			counter: 0
 		}
+	},
+	title() {
+		return "Showcase"
 	}
 }
 </script>

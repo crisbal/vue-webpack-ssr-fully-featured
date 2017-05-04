@@ -8,7 +8,7 @@
 export default {
 	name: "Home",
 	title() {
-		return "Home Page!"
+		return "Home"
 	}
 }
 </script>

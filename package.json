@@ -1,8 +1,8 @@
 {
-  "name": "wikitolearn-frontend",
-  "version": "0.0.1",
+  "name": "vue-webpack-ssr-fully-featured",
+  "version": "0.0.5",
   "description": "",
-  "author": "WikiToLearn",
+  "author": "Cristian Baldi",
   "license": "GPL-3.0",
   "private": true,
   "scripts": {

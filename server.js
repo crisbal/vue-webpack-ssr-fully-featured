@@ -71,7 +71,7 @@ const render = (req, res) => {
 	}
 
 	const context = {
-		title: "WikiToLearn",
+		title: "SiteName",
 		url: req.url
 	}
 
