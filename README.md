@@ -13,7 +13,6 @@ A fully featured boilerplate PWA project that uses Vue, Vuex, Vue-Router, vue-i1
 	* [Modularize the store](https://vuex.vuejs.org/en/modules.html)
 	* [Make Test](https://vuex.vuejs.org/en/testing.html)
 * SSR Head tags
-	* Fix issues with titles
 	* Enable the editing of other meta tags
 		* Check if it is possible?
 
