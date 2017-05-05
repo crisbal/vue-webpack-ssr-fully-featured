@@ -71,7 +71,10 @@ const render = (req, res) => {
 	}
 
 	const context = {
-		title: "SiteName",
+		meta: {
+			title: "Default Title",
+			description: "Default description"
+		},
 		url: req.url
 	}
 

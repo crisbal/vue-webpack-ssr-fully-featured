@@ -8,8 +8,8 @@ import { createRouter } from "./router"
 import App from "./App.vue"
 
 
-import titleMixin from "./utils/title.mixin"
-Vue.mixin(titleMixin)
+import metaInfo from "./utils/metaInfo.mixin"
+Vue.mixin(metaInfo)
 
 // allow i18n for components
 Vue.use(VueI18n)

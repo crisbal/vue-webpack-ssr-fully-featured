@@ -44,8 +44,11 @@ export default {
 			counter: 0
 		}
 	},
-	title() {
-		return "Showcase"
+	meta() {
+		return {
+			title: "Showcase",
+			description: "This is the meta description for the showcase page"
+		}
 	}
 }
 </script>
