@@ -13,7 +13,7 @@ const serverMetaInfoMixin = {
 	created() {
 		const meta = getMeta(this)
 		if (meta) {
-			this.$root.$options.ssrContext.meta = meta
+			this.$ssrContext.meta = meta
 		}
 	}
 }
