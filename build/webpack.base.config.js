@@ -79,8 +79,9 @@ module.exports = {
 			"styles": path.resolve(__dirname, "../src/styles"),
 			"views": path.resolve(__dirname, "../src/views"),
 			"components": path.resolve(__dirname, "../src/components"),
-			"utils": path.resolve(__dirname, "../src/utils")
-		}
+			"utils": path.resolve(__dirname, "../src/utils"),
+		},
+    extensions: ['.js', '.vue', '.scss']
 	},
 	resolveLoader: {
 		alias: {
