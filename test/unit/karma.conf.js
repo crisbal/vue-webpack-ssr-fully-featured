@@ -3,12 +3,7 @@ var baseConfig = require('../../build/webpack.base.config.js');
 var webpack = require('webpack');
 
 var webpackConfig = merge(baseConfig, {
-	devtool: "#inline-source-map",
-	plugins: [
-		new webpack.DefinePlugin({
-			'process.env.NODE_ENV': "'testing'"
-		})
-	]
+	devtool: "#inline-source-map"
 })
 
 // no need for app entry during tests
