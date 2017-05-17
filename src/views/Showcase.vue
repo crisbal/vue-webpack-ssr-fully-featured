@@ -15,6 +15,12 @@
 					input(type="number", v-model="counter", id="counter")
 				.feature__description
 					| The above translation is generated using the state of the `input` element. Both the server and the client will render this, dynamically.
+			.feature.feature--404-page
+				.feature__name
+					| This is a link to an unknown page:
+					router-link(to="/404") Go to a 404 page
+				.feature__description
+					| Clicking the link will bring you to a custom 404 page
 </template>
 
 <style lang="scss" scoped>
