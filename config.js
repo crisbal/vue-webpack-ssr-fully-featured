@@ -17,7 +17,7 @@ languages = {
 }
 
 // the language that will be used in the building process of the skin
-const currentLanguage = process.env.LANGUAGE || "en"
+const currentLanguage = process.env.BUILD_LANGUAGE || "en"
 if (!languages[currentLanguage]) {
 	throw new Error("Undefined language: " + currentLanguage)
 }
