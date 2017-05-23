@@ -11,7 +11,7 @@ Commits should be in the format `[SCOPE] MESSAGE`
 * `[config]`
 * `[components/COMPONENT_NAME]`
 * `[view/VIEW_NAME]`
-* `[router]`, `[styles]`, `[router]`, `[store]`, `[utils]`,
+* `[router]`, `[styles]`, `[store]`, `[utils]`, ...
 * `[resource]`, when working on static files or images
 
 When working in multiple scopes just include the most relevant one.
