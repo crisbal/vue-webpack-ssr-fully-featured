@@ -9,9 +9,6 @@ A fully featured boilerplate PWA project that uses Vue, Vuex, Vue-Router, vue-i1
 * Vuex/Store
 	* [Modularize the store](https://vuex.vuejs.org/en/modules.html)
 	* [Make Test](https://vuex.vuejs.org/en/testing.html)
-* SSR Head tags
-	* Enable the editing of meta tags client side
-		* Check if it is worth doing this client side?
 * Complete 404 support
 	* Return 404 HTTP status code when rendering 404 page
 	* https://github.com/Narkoleptika/webpack-everything/commit/45f2ea06e49291549805b124f1ee7d1fb0ba51e1

@@ -23,6 +23,8 @@ const clientMetaInfoMixin = {
 		const meta = getMeta(this)
 		if (meta) {
 			document.title = `${meta.title} - SiteName`
+			document.querySelector("meta[name=description]")
+				.setAttribute("content", meta.description)
 		}
 	}
 }
