@@ -54,14 +54,19 @@ if (isProduction) {
 	})
 }
 
-const render = (req, res) => {
+const render = (req, res, context) => {
 	const s = Date.now()
+
+	console.log(`Rendering: ${req.url} ${context.is404 ? " as 404" : ""}`)
 
 	res.setHeader("Content-Type", "text/html")
 
 	const errorHandler = (err) => {
 		if (err && err.code === 404) {
-			res.status(404).end("404 | Page Not Found")
+			console.error(`404: ${req.url}`)
+			res.status(404)
+			context.is404 = true
+			return render(req, res, context)
 		} else {
 			// Render Error Page or Redirect
 			res.status(500).end("500 | Internal Server Error")
@@ -70,15 +75,6 @@ const render = (req, res) => {
 		}
 	}
 
-	const context = {
-		meta: {
-			title: "Default Title",
-			description: "Default description"
-		},
-		url: req.url
-	}
-
-	console.log(`Rendering: ${req.url}`)
 	renderer.renderToStream(context)
 		.on("end", () => console.log(`Whole request: ${Date.now() - s}ms`))
 		.on("error", errorHandler)
@@ -93,8 +89,18 @@ app.use("/service-worker.js", serve("./dist/service-worker.js"))
 app.use("/manifest.json", serve("./static/manifest.json", true))
 
 
-app.get("*", isProduction ? render : (req, res) => {
-	readyPromise.then(() => render(req, res))
+app.get("*", (req, res) => {
+	const context = {
+		meta: {
+			title: "Default Title",
+			description: "Default description"
+		},
+		url: req.url
+	}
+
+	isProduction ?
+		render(req, res, context) :
+		readyPromise.then(() => render(req, res, context))
 })
 
 const port = config.server.port
