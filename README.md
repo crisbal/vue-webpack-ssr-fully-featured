@@ -9,7 +9,6 @@ A fully featured boilerplate PWA project that uses Vue, Vuex, Vue-Router, vue-i1
 * Vuex/Store
 	* [Modularize the store](https://vuex.vuejs.org/en/modules.html)
 	* [Make Test](https://vuex.vuejs.org/en/testing.html)
-* Fix double router push issues with 404
 
 ## Docs
 
