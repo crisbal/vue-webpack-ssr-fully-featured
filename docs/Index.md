@@ -16,6 +16,7 @@
 
 * [Commit Messages](Commit-Messages.md)
 * [Benchmarks](Benchmarks.md)
+* [Tests](Tests.md)
 
 ## Interesting projects
 
