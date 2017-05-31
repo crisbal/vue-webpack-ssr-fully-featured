@@ -1,7 +1,9 @@
 {
 	"processors": ["stylelint-processor-html"],
 	"extends": "stylelint-config-standard",
-
+	"plugins": [
+		"stylelint-scss"
+	],
 	"rules": {
 		"font-family-name-quotes": "always-unless-keyword",
 		"string-quotes": "double",
@@ -9,6 +11,21 @@
 		"rule-empty-line-before": "always",
 		"max-empty-lines": 2,
 		"indentation": "tab",
-		"no-empty-source": null
+		"no-empty-source": null,
+
+		"scss/at-if-closing-brace-newline-after": "always-last-in-chain",
+		"at-rule-empty-line-before": [
+			"always",
+			{
+				ignoreAtRules: ["else"],
+				except: ["first-nested"]
+			}
+		],
+		"block-closing-brace-newline-after": [
+			"always",
+			{
+				ignoreAtRules: ["if"]
+			}
+		]
 	}
 }
