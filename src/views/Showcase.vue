@@ -27,6 +27,11 @@
 					button(v-on:click="incrementCounter()") Click to increment
 				.feature__description
 					| Clicking the button will dispatch the increment action
+			.feature.feature--vuex-api
+				.feature__name
+					| This is a remotely fetched string: {{ remotePageContent }}
+				.feature__description
+					| It is fetched dynamically
 </template>
 
 <style lang="scss" scoped>
@@ -59,6 +64,9 @@ export default {
 	computed: {
 		vuexCounter() {
 			return this.$store.state.counter
+		},
+		remotePageContent() {
+			return this.$store.state.remotePageContent
 		}
 	},
 	meta() {
@@ -71,6 +79,9 @@ export default {
 		incrementCounter() {
 			this.$store.dispatch("INCREMENT_COUNTER")
 		}
+	},
+	asyncData({ store }) {
+		return store.dispatch("LOAD_REMOTE_PAGE")
 	}
 }
 </script>
