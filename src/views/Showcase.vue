@@ -21,6 +21,12 @@
 					router-link(to="/404") Go to a 404 page
 				.feature__description
 					| Clicking the link will bring you to a custom 404 page
+			.feature.feature--vuex-counter
+				.feature__name
+					| This is a vuex-managed counter: {{ vuexCounter }}
+					button(v-on:click="incrementCounter()") Click to increment
+				.feature__description
+					| Clicking the button will dispatch the increment action
 </template>
 
 <style lang="scss" scoped>
@@ -50,10 +56,20 @@ export default {
 			counter: 0
 		}
 	},
+	computed: {
+		vuexCounter() {
+			return this.$store.state.counter
+		}
+	},
 	meta() {
 		return {
 			title: "Showcase",
 			description: "This is the meta description for the showcase page"
+		}
+	},
+	methods: {
+		incrementCounter() {
+			this.$store.dispatch("INCREMENT_COUNTER")
 		}
 	}
 }
