@@ -11,7 +11,8 @@ export function createStore() {
 		strict: process.env.NODE_ENV !== "production",
 
 		state: {
-			counter: 0
+			counter: 0,
+			remotePageContent: null
 		},
 		actions,
 		mutations
