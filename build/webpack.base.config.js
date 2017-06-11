@@ -60,7 +60,7 @@ const doI18n = StringReplacePlugin.replace({
 module.exports = {
 	devtool: isProduction
 		? false
-		: "#cheap-module-eval-source-map", // smaller source map
+		: "inline-source-map",
 
 	entry: {
 		app: "./src/entry-client.js"
