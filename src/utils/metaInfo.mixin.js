@@ -2,8 +2,8 @@ function getMeta(vm) {
 	const { meta } = vm.$options
 	if (meta) {
 		return typeof meta === "function"
-		? meta.call(vm)
-		: meta
+			? meta.call(vm)
+			: meta
 	} else {
 		return null
 	}
@@ -30,5 +30,5 @@ const clientMetaInfoMixin = {
 }
 
 export default process.env.VUE_ENV === "server"
-? serverMetaInfoMixin
-: clientMetaInfoMixin
+	? serverMetaInfoMixin
+	: clientMetaInfoMixin
