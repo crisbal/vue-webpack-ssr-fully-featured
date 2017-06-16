@@ -23,18 +23,6 @@ const clientConfig = merge(base, {
 		new webpack.DefinePlugin({
 			"process.env.VUE_ENV": "'client'"
 		}),
-		// extract vendor chunks for better caching
-		// https://github.com/Narkoleptika/webpack-everything/commit/b7902f60806cf40b9d1abf8d6bb2a094d924fff7
-		new webpack.optimize.CommonsChunkPlugin({
-			name: "vendor",
-			minChunks: function(module) {
-				return module.context && module.context.indexOf("node_modules") !== -1
-			}
-		}),
-		// any other js goes here
-		new webpack.optimize.CommonsChunkPlugin({
-			name: "manifest"
-		}),
 		// generate output HTML
 		new HTMLPlugin({
 			template: "src/index.template.html",
@@ -72,6 +60,23 @@ if (config.isProduction) {
 			dontCacheBustUrlsMatching: /./,
 			navigateFallback: "/"
 
+		})
+	)
+}
+
+if(!config.isTesting) {
+	clientConfig.plugins.push(
+		// extract vendor chunks for better caching
+		// https://github.com/Narkoleptika/webpack-everything/commit/b7902f60806cf40b9d1abf8d6bb2a094d924fff7
+		new webpack.optimize.CommonsChunkPlugin({
+			name: "vendor",
+			minChunks: function(module) {
+				return module.context && module.context.indexOf("node_modules") !== -1
+			}
+		}),
+		// any other js goes here
+		new webpack.optimize.CommonsChunkPlugin({
+			name: "manifest"
 		})
 	)
 }
