@@ -75,11 +75,14 @@ module.exports = {
 	resolve: {
 		alias: {
 			"static": path.resolve(__dirname, "../static"),
-			"images": path.resolve(__dirname, "../src/images"),
-			"styles": path.resolve(__dirname, "../src/styles"),
-			"views": path.resolve(__dirname, "../src/views"),
+			"src": path.resolve(__dirname, "../src"),
 			"components": path.resolve(__dirname, "../src/components"),
+			"images": path.resolve(__dirname, "../src/images"),
+			"router": path.resolve(__dirname, "../src/router"),
+			"store": path.resolve(__dirname, "../src/store"),
+			"styles": path.resolve(__dirname, "../src/styles"),
 			"utils": path.resolve(__dirname, "../src/utils"),
+			"views": path.resolve(__dirname, "../src/views")
 		},
     extensions: ['.js', '.vue', '.scss']
 	},
