@@ -30,7 +30,7 @@ module.exports = {
 		// ignore max-len for comments
 		"max-len": [
 			"error",
-			{ "code": 100, "ignoreComments": true, "ignoreTrailingComments": true }
+			{ "code": 100, "ignoreComments": true, "ignoreTrailingComments": true, "ignoreUrls": true, "ignoreStrings": true }
 		],
 
 		// force space after and before curly braces in object/dict declarations
@@ -49,6 +49,6 @@ module.exports = {
 
 		"require-jsdoc": 0,
 
-		"capIsNew": 0
+		"new-cap": ["error", { "capIsNew": false }]
 	}
 }
