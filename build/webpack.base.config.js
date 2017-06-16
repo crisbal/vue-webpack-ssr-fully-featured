@@ -112,10 +112,10 @@ module.exports = {
 			},
 			{
 				test: /\.js$/,
-				loader: "buble-loader",
-				options: {
-					objectAssign: "Object.assign"
-				},
+				loader: 'babel-loader',
+        query: {
+          presets: ['es2015']
+        },
 				exclude: /node_modules/
 			},
 			{
