@@ -4,11 +4,10 @@ A fully featured boilerplate PWA project that uses Vue, Vuex, Vue-Router, vue-i1
 
 ## Todo
 
-* Test
-	* Write test for existing components
 * Vuex/Store
 	* [Modularize the store](https://vuex.vuejs.org/en/modules.html)
-	* [Make Test](https://vuex.vuejs.org/en/testing.html)
+		* Do we need this?
+* Write docs
 
 ## Docs
 
