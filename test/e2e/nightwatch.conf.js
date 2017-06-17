@@ -24,6 +24,15 @@ module.exports = {
 			}
 		},
 
+		phantomjs: {
+			desiredCapabilities: {
+				browserName: "phantomjs",
+				javascriptEnabled: true,
+				acceptSslCerts: true,
+				"phantomjs.binary.path" : "./node_modules/.bin/phantomjs"
+			}
+		},
+
 		chrome: {
 			desiredCapabilities: {
 				browserName: "chrome",
