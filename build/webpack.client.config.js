@@ -59,7 +59,6 @@ if (config.isProduction) {
 
 			dontCacheBustUrlsMatching: /./,
 			navigateFallback: "/"
-
 		})
 	)
 }
@@ -78,6 +77,12 @@ if(!config.isTesting) {
 		new webpack.optimize.CommonsChunkPlugin({
 			name: "manifest"
 		})
+	)
+}
+
+if(config.isProduction) {
+	clientConfig.plugins.push(
+			new webpack.optimize.ModuleConcatenationPlugin()
 	)
 }
 
