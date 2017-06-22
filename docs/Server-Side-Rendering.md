@@ -17,7 +17,7 @@ Promise.all(matchedComponents.map((component) => {
 })).then(....)
 ```
 
-The `asyncData` hook will get access to the vuex `store` object to allow the dispatching of vuex action.
+The `asyncData` hook will get access to the vuex `store` object to allow the dispatching of vuex action and also to the `route` object to access route parameters.
 
 ## Use cases
 

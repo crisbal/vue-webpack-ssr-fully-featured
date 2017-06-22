@@ -9,14 +9,16 @@
 
 ## Working with the project
 
+* [Build Process](Build-Process.md)
 * [Localization](Localization.md)
 * [Server Side Rendering](Server-Side-Rendering.md)
+* [Meta Tags](Meta-Tags.md)
 
 ## Other
 
+* [Tests](Tests.md)
 * [Commit Messages](Commit-Messages.md)
 * [Benchmarks](Benchmarks.md)
-* [Tests](Tests.md)
 
 ## Interesting projects
 

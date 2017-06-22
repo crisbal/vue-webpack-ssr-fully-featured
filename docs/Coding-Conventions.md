@@ -26,8 +26,8 @@ Yes, we use **tabs over spaces**. This is because with tabs, everyone can choose
 
 ## Javascript
 
-We use ES6 features. We are using [buble](https://buble.surge.sh/) to transpile to browser-supported Javascript.
+We use ES6 features. We are using [babel](https://babeljs.io/) to transpile to browser-supported Javascript.
 
-We make large use of `Promise`, arrow functions, string templating and functional directives (`map`, `filter`, ...)
+We make large use of `Promise`s, arrow functions, string templating and functional directives (`map`, `filter`, ...)
 
 A quick overview is available over at [lukehoban/es6features](https://github.com/lukehoban/es6features).

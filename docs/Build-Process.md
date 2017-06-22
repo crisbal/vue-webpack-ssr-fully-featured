@@ -1,49 +1,31 @@
 # Build Process
 
-The build process is started by `npm run build`
+The build process is carried out by [webpack](https://webpack.js.org/)
 
-Using webpack[link_here] configuration files for both server and client, it will create dist/ directory containing all files ready to be deployed in production environment.
+There are two build process, one for the client and one for the server.
 
-## Common configuration [file](../build/webpack.base.config.js)
+You can start the build process with `npm/yarn run build`. You can also run only the client or the server build process with `yarn run build:client`, `yarn run build:server`.
 
-Source code has to pass some steps before deploying:
+## Exploring the build process
 
-### Linting
+### Common build process
 
-We use `stylelint` and `eslint` to lint style and script source code. Any "codestyle-warning" appear as "error" during build process so we have to pay attention at formalisms.
+* Source javascript files get linted
+* Source javascript files get transpiled to browser-compatible javascript via [babel](https://babeljs.io/)
+* Vue components get compiled via [vue-loader](https://github.com/vuejs/vue-loader)
+* Resources such as images get included in source files if they are small enough, otherwise they are copied to the `dist/` folder by [file-loader](https://github.com/webpack-contrib/file-loader)
+* Style gets linted via [stylelint](https://stylelint.io/)
+* [Localization](Localization.md) is carried out for HTML/pug templates
 
-`stylelint` and `eslint` lints .scss, .js and .vue files.
+### Client build process
 
-### Localization
+* Everything in the common build process
+* A Service Worker is generated for caching and offline support
+* The main bundle (`app.js`) gets split in three parts, `vendor.js` for dependencies, `manifest.js` for Webpack-related code, and `app.js` only for the code we wrote. This will allow you to change the app code without the need for the user to redownload all the external depedencies again, which is what would happen if you had a single bundle.
+* Javascript gets uglified and minified
+* An index.html file is built
 
-We use `vue-i18n` to resolve localization strings to the appropriate language.
+### Server build process
 
-Localization strings appears in source code as `$ts("my_string")` and will be overwritten by the corresponding value that "my_string" has in selected language, looking for fallback language if selected language is not found. Throws "errors" if there are no languages or if "my_string" doesn't exist.
-
-### Transpiling ES2015
-
-We use `buble` to transpile [ES2015 methods and properties](link_here)
-
-### Compiling .vue
-
-Vue files contains PUG (or HTML), JavaScript and SCSS (or another style language) source code. In the way it works, Vue has to be compiled to JavaScript files that can be imported dynamically reducing bandwidth and heavyness.
-
-### Creating .js chunks
-
-We creates .js chunks of similar dimension because of how HTTP/2 works better with. (to complete)
-
-## Client configuration [file](../build/webpack.client.config.js)
-
-### Minifying
-
-Minify source code by removing useless whitespace, comments, renaming variables to a shorter name etc...
-
-### Service worker generation
-
-Tell the service worker `sw-precache` which are the file to be cached.
-
-## Build server [file](../build/webpack.server.config.js)
-
-### Server-Side Rendering
-
-This has to be done to gain some useful benefits. Mostly ddone because of SEO readability and to support environment without JavaScript
+* Everything in the common build process
+* Some files needed for SSR are created
