@@ -8,7 +8,6 @@
 		"font-family-name-quotes": "always-unless-keyword",
 		"string-quotes": "double",
 		"value-keyword-case": "lower",
-		"rule-empty-line-before": "always",
 		"max-empty-lines": 2,
 		"indentation": "tab",
 		"no-empty-source": null,
@@ -20,6 +19,13 @@
 				ignore: ["after-comment"],
 				ignoreAtRules: ["else"],
 				except: ["first-nested", "after-same-name"]
+			}
+		],
+		"rule-empty-line-before": [
+			"always",
+			{
+				ignore: ["after-comment"],
+				except: ["first-nested"]
 			}
 		],
 		"block-closing-brace-newline-after": [
