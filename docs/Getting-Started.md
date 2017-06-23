@@ -34,4 +34,3 @@ cd $FOLDER
 * Serving
 	* `yarn run start`
 		* `npm run start`
-

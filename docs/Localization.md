@@ -2,6 +2,10 @@
 
 Localization is implemented by the library [vue-i18n](https://kazupon.github.io/vue-i18n/en/). There are two kind of localization implemented in this project, static (or build-time localization) and dynamic (or runtime localization).
 
+Specify the `BUILD_LANGUAGE` environment variable (two letter language code defined in `config.js`) to build the project for a different language, by default `BUILD_LANGUAGE` is `en`.
+
+`BUILD_LANGUAGE=it yarn run build`
+
 ## Static localization
 
 **Static localization** is localization applied to the templates at build time.
@@ -56,6 +60,6 @@ Localization files are stored in the `/i18n` folder.
 
 We are following [vue-i18n' syntax](https://kazupon.github.io/vue-i18n/en/syntax.html).
 
-Just a tip: try to keep the files it simple! Try to avoid nested structures and arrays.
+### Adding new languages
 
-TODO: Localization keys format
+Open the file [config.js](../config.js) and define a new entry inside the `languages` object.
