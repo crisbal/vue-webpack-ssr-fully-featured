@@ -10,8 +10,8 @@ We recommend the usage of [yarn](https://yarnpkg.com/en/), but npm is fine too.
 
 * Clone the repository
 ```
-git clone $URL
-cd $FOLDER
+git clone https://github.com/crisbal/vue-webpack-ssr-fully-featured
+cd vue-webpack-ssr-fully-featured
 ```
 * Install dependencies
 	* Simply `yarn`
