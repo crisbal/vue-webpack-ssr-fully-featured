@@ -56,6 +56,11 @@
 <script>
 export default {
 	name: "Showcase",
+	data: () => {
+		return {
+			counter: 0
+		}
+	},
 	computed: {
 		vuexCounter() {
 			return this.$store.state.counter
