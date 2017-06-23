@@ -20,9 +20,9 @@ This is intended as a starting point for medium/big sized projects but also as a
 * 404 Page
 	* Returns 404 HTTP code
 	* Customize it to your liking
-* Progressive Web App ready
+* Progressive Web App (WIP)
 	* Install to home screen
-	* Offline support (WIP)
+* Offline support (WIP)
 * Build process managed by Webpack
 	* Vue Single File Components
 	* Write Javascript in ES6, Babel will transpile
