@@ -85,9 +85,8 @@ app.use(compression({ threshold: 0 }))
 app.use(favicon('./static/favicon.png'))
 
 app.use("/dist", serve("./dist", true))
+app.use("/static", serve("./static", true))
 app.use("/service-worker.js", serve("./dist/service-worker.js"))
-app.use("/manifest.json", serve("./static/manifest.json", true))
-
 
 app.get("*", (req, res) => {
 	const context = {
