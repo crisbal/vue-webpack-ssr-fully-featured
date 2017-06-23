@@ -32,6 +32,7 @@ This is intended as a starting point for medium/big sized projects but also as a
 		* Separate the requirements from your code
 	* Automatic generation of Service Worker
 	* Uglify and minify your JS
+		* Only 56kB for loading all the home page.
 	* Much more
 * Tests
 	* Unit tests
