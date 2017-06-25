@@ -8,7 +8,6 @@ const StyleLintPlugin = require("stylelint-webpack-plugin")
 const Vue = require("vue")
 const VueI18n = require("vue-i18n")
 const config = require("../config")
-const isProduction = config.isProduction
 
 const messages = {
 	main:	require(`../i18n/${config.language.filename}`),
@@ -58,7 +57,7 @@ const doI18n = StringReplacePlugin.replace({
 })
 
 module.exports = {
-	devtool: isProduction
+	devtool: config.isProduction
 		? false
 		: "inline-source-map",
 
@@ -107,7 +106,12 @@ module.exports = {
 					preLoaders: {
 						pug: doI18n,
 						html: doI18n
-					}
+					},
+					preserveWhitespace: false,
+					postcss: [
+						require("autoprefixer")({browsers: ["last 3 versions"]}),
+						require("cssnano")
+					]
 				}
 			},
 			{
@@ -128,7 +132,7 @@ module.exports = {
 
 	performance: {
 		maxEntrypointSize: 250000,
-		hints: isProduction ? "warning" : false
+		hints: config.isProduction ? "warning" : false
 	},
 
 	plugins: config.isProduction ? commonPlugins : commonPlugins.concat([

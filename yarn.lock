@@ -76,7 +76,7 @@ ajv@^4.7.0, ajv@^4.9.1:
     co "^4.6.0"
     json-stable-stringify "^1.0.1"
 
-ajv@^5.1.5:
+ajv@^5.0.0, ajv@^5.1.5:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/ajv/-/ajv-5.2.0.tgz#c1735024c5da2ef75cc190713073d44f098bf486"
   dependencies:
@@ -276,6 +276,17 @@ autoprefixer@^6.0.0, autoprefixer@^6.3.1:
     normalize-range "^0.1.2"
     num2fraction "^1.2.2"
     postcss "^5.2.16"
+    postcss-value-parser "^3.2.3"
+
+autoprefixer@^7.1.1:
+  version "7.1.1"
+  resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-7.1.1.tgz#97bc854c7d0b979f8d6489de547a0d17fb307f6d"
+  dependencies:
+    browserslist "^2.1.3"
+    caniuse-lite "^1.0.30000670"
+    normalize-range "^0.1.2"
+    num2fraction "^1.2.2"
+    postcss "^6.0.1"
     postcss-value-parser "^3.2.3"
 
 avoriaz@^2.1.3:
@@ -1072,7 +1083,7 @@ browserslist@^1.1.1, browserslist@^1.1.3, browserslist@^1.3.6, browserslist@^1.5
     caniuse-db "^1.0.30000639"
     electron-to-chromium "^1.2.7"
 
-browserslist@^2.1.2:
+browserslist@^2.1.2, browserslist@^2.1.3:
   version "2.1.5"
   resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-2.1.5.tgz#e882550df3d1cd6d481c1a3e0038f2baf13a4711"
   dependencies:
@@ -1160,7 +1171,7 @@ caniuse-db@^1.0.30000187, caniuse-db@^1.0.30000529, caniuse-db@^1.0.30000634, ca
   version "1.0.30000686"
   resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000686.tgz#d55b479ed6e6402c1fd3f1fd8f46e694d86ea464"
 
-caniuse-lite@^1.0.30000684:
+caniuse-lite@^1.0.30000670, caniuse-lite@^1.0.30000684:
   version "1.0.30000686"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000686.tgz#d9d9ec6110e5533be544a689003f7596532c67d3"
 
@@ -1728,7 +1739,7 @@ cssesc@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/cssesc/-/cssesc-0.1.0.tgz#c814903e45623371a0477b40109aaafbeeaddbb4"
 
-"cssnano@>=2.6.1 <4":
+"cssnano@>=2.6.1 <4", cssnano@^3.10.0:
   version "3.10.0"
   resolved "https://registry.yarnpkg.com/cssnano/-/cssnano-3.10.0.tgz#4f38f6cea2b9b17fa01490f23f1dc68ea65c1c38"
   dependencies:
@@ -4961,7 +4972,7 @@ postcss-less@^0.14.0:
   dependencies:
     postcss "^5.0.21"
 
-postcss-load-config@^1.1.0:
+postcss-load-config@^1.1.0, postcss-load-config@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/postcss-load-config/-/postcss-load-config-1.2.0.tgz#539e9afc9ddc8620121ebf9d8c3673e0ce50d28a"
   dependencies:
@@ -4983,6 +4994,15 @@ postcss-load-plugins@^2.3.0:
   dependencies:
     cosmiconfig "^2.1.1"
     object-assign "^4.1.0"
+
+postcss-loader@^2.0.6:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/postcss-loader/-/postcss-loader-2.0.6.tgz#8c7e0055a3df1889abc6bad52dd45b2f41bbc6fc"
+  dependencies:
+    loader-utils "^1.1.0"
+    postcss "^6.0.2"
+    postcss-load-config "^1.2.0"
+    schema-utils "^0.3.0"
 
 postcss-media-query-parser@^0.2.0, postcss-media-query-parser@^0.2.3:
   version "0.2.3"
@@ -5193,7 +5213,7 @@ postcss@^5.0.0, postcss@^5.0.10, postcss@^5.0.11, postcss@^5.0.12, postcss@^5.0.
     source-map "^0.5.6"
     supports-color "^3.2.3"
 
-postcss@^6.0.1:
+postcss@^6.0.1, postcss@^6.0.2:
   version "6.0.2"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-6.0.2.tgz#5c4fea589f0ac3b00caa75b1cbc3a284195b7e5d"
   dependencies:
@@ -5834,6 +5854,12 @@ sass-loader@^6.0.5:
 sax@~1.2.1:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.2.tgz#fd8631a23bc7826bef5d871bdb87378c95647828"
+
+schema-utils@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/schema-utils/-/schema-utils-0.3.0.tgz#f5877222ce3e931edae039f17eb3716e7137f8cf"
+  dependencies:
+    ajv "^5.0.0"
 
 scss-tokenizer@^0.2.3:
   version "0.2.3"
