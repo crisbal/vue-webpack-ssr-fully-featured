@@ -1,7 +1,9 @@
 <template lang="pug">
 	main.view--Home
-		h1 This is the home page!
-		router-link(to="/showcase") Go to showcase
+		h1 Home Page
+		p Hello there!
+		p In the showcase you can see some of the features offered by this project
+		router-link(to="/showcase") Go to the showcase page
 </template>
 
 <script>

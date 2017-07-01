@@ -19,7 +19,8 @@ export default {
 	meta() {
 		return {
 			title: "ShowcaseFetchError",
-			description: "This will return 404 when failing to fetch async data"
+			description: "This will return 404 when failing to fetch async data",
+			httpStatusCode: this.error ? 404 : 200
 		}
 	},
 	asyncData({ store }) {
