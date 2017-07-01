@@ -1,5 +1,13 @@
 # Benchmarks
 
+## Lighthouse
+
+(As of 2017-07-01)
+
+![Lighthouse score](images/lighthouse-score.png)
+
+HTTP2 (and HTTPS) was achieved via [Caddy](https://caddyserver.com/)
+
 ## Stress test with `wrk`
 
 Tested on a development machine with `wrk -t12 -c400 -d30s http://localhost:8080/`

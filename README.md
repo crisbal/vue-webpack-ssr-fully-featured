@@ -66,6 +66,10 @@ npm run dev
 
 Check out the [official documentation](docs/Index.md) for info on how to get started and to get an idea on how everything works.
 
+## Lighthouse Score
+
+![Lighthouse score](docs/images/lighthouse-score.png)
+
 ## Contributing
 
 Feel free to submit issues and pull requests, I will try to answer as soon as possible.
