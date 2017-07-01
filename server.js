@@ -57,28 +57,29 @@ if (isProduction) {
 const render = (req, res, context) => {
 	const s = Date.now()
 
-	console.log(`Rendering: ${req.url} ${context.is404 ? " as 404" : ""}`)
+	console.log(`Rendering: ${req.url}`)
 
 	res.setHeader("Content-Type", "text/html")
 
 	const errorHandler = (err) => {
-		if (err && err.code === 404) {
-			console.error(`404: ${req.url}`)
-			res.status(404)
-			context.is404 = true
-			return render(req, res, context)
-		} else {
-			// Render Error Page or Redirect
-			res.status(500).end("500 | Internal Server Error")
-			console.error(`Error during render : ${req.url}`)
-			console.error(err)
-		}
+		// TODO: Render Error Page
+		console.error(`Fatal error when rendering : ${req.url}`)
+		console.error(err)
+
+		res.status(500)
+		res.end(`500 | Fatal error: ${err}`)
+
+		console.log(`Whole request: ${Date.now() - s}ms`)
 	}
 
-	renderer.renderToStream(context)
-		.on("end", () => console.log(`Whole request: ${Date.now() - s}ms`))
-		.on("error", errorHandler)
-		.pipe(res)
+	renderer.renderToString(context, (err, html) => {
+		if (err) return errorHandler(err)
+
+		res.status(context.meta.httpStatusCode || 200)
+		res.end(html)
+
+		console.log(`Whole request: ${Date.now() - s}ms`)
+	})
 }
 
 app.use(compression({ threshold: 0 }))
@@ -90,10 +91,6 @@ app.use("/service-worker.js", serve("./dist/service-worker.js"))
 
 app.get("*", (req, res) => {
 	const context = {
-		meta: {
-			title: "Default Title",
-			description: "Default description"
-		},
 		url: req.url
 	}
 

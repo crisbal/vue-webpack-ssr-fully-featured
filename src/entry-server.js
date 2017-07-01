@@ -12,25 +12,11 @@ export default (context) => {
 		const s = isDev && Date.now()
 		const { app, router, store } = createApp(context)
 
-		// set router's location
-		if (!context.is404) {
-			router.push(context.url)
-		} else {
-			router.replace(context.url)
-		}
+		router.push(context.url)
 
 		// wait until router has resolved possible async hooks
 		router.onReady(() => {
 			const matchedComponents = router.getMatchedComponents()
-
-			// if there is at least a NotFount component
-			if (matchedComponents.reduce((a, c) => a === true ? a : c.name === "NotFound", false)) {
-				if (!context.is404) {
-					reject({
-						code: 404
-					})
-				}
-			}
 
 			// Call fetchData hooks on components matched by the route.
 			// A preFetch hook dispatches a store action and returns a Promise,

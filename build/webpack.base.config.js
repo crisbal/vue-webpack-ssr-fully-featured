@@ -80,7 +80,7 @@ module.exports = {
 			"router": path.resolve(__dirname, "../src/router"),
 			"store": path.resolve(__dirname, "../src/store"),
 			"styles": path.resolve(__dirname, "../src/styles"),
-			"utils": path.resolve(__dirname, "../src/utils"),
+			"mixins": path.resolve(__dirname, "../src/mixins"),
 			"views": path.resolve(__dirname, "../src/views")
 		},
     extensions: ['.js', '.vue', '.scss']

@@ -15,7 +15,10 @@ let routes = [
 
 if (process.env.NODE_ENV !== "production") {
 	const Showcase = () => System.import("views/Showcase")
+	const ShowcaseFetchError = () => System.import("views/ShowcaseFetchError")
+
 	routes.push({ path: "/showcase", component: Showcase })
+	routes.push({ path: "/showcase/fetch-error", component: ShowcaseFetchError })
 }
 
 // push as last element because the wildcard match will catch all the unknown urls

@@ -8,7 +8,7 @@ import { createRouter } from "./router"
 import App from "./App.vue"
 
 
-import metaInfo from "./utils/metaInfo.mixin"
+import metaInfo from "./mixins/metaInfo"
 Vue.mixin(metaInfo)
 
 // allow i18n for components

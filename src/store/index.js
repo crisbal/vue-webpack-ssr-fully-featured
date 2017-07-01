@@ -12,7 +12,8 @@ export function createStore() {
 
 		state: {
 			counter: 0,
-			remotePageContent: null
+			remotePageContent: null,
+			error: null
 		},
 		actions,
 		mutations
