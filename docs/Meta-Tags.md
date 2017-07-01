@@ -25,7 +25,7 @@ You can reference the instance variables in the meta informations, this mean tha
 
 ## Supported meta informations
 
-Currently only the title and the description are supported, but adding new tags is very trivial.
+Currently only the title and the description are supported, but adding new tags is very trivial. Another field you can set is `httpStatusCode` (more on this in the [relevant doc entry](Error-Handling.md))
 
 ## Adding support for new meta informations
 

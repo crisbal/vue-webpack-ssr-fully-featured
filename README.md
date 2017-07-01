@@ -9,7 +9,7 @@ This is intended as a starting point for medium/big sized projects but also as a
 * Server Side Rendering
 	* Async data fetching before rendering
 	* Client hydration
-	* Support people without JS
+	* Return the HTTP code you want
 * Routing with vue-router
 * State management with vuex
 * Internazionalization with vue-i18n
@@ -19,10 +19,11 @@ This is intended as a starting point for medium/big sized projects but also as a
 	* Title and meta tags support
 * 404 Page
 	* Returns 404 HTTP code
-	* Customize it to your liking
 * Progressive Web App (WIP)
 	* Install to home screen
 * Offline support (WIP)
+* Graceful error handling
+	* Catch errors and handle them with ease
 * Build process managed by Webpack
 	* Vue Single File Components
 	* Write Javascript in ES6, Babel will transpile
@@ -46,7 +47,6 @@ This is intended as a starting point for medium/big sized projects but also as a
 ## Todo
 
 * Find a better, shorter name for the project
-* Handle errors for async data
 * Vuex/Store
 	* [Modularize the store](https://vuex.vuejs.org/en/modules.html)
 		* Do we need this?
