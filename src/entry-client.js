@@ -36,6 +36,9 @@ router.onReady(() => {
 		const matched = router.getMatchedComponents(to)
 		const prevMatched = router.getMatchedComponents(from)
 		let diffed = false
+
+		if (store.state.error) store.commit("CLEAR_ERROR")
+
 		const activated = matched.filter((component, i) => {
 			return diffed || (diffed = (prevMatched[i] !== component))
 		})
