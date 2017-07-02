@@ -58,4 +58,11 @@ router.onReady(() => {
 // service worker
 if (process.env.NODE_ENV === "production" && "serviceWorker" in navigator) {
 	navigator.serviceWorker.register("/service-worker.js")
+} else {
+	navigator.serviceWorker.getRegistrations().then(function(registrations) {
+		console.log("Unregistering service workers for development")
+		for (let registration of registrations) {
+			registration.unregister()
+		}
+	})
 }
