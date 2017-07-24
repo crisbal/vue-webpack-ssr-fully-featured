@@ -1,10 +1,10 @@
 <template lang="pug">
 	#app.App(:class="{ 'App--rtl': isRTL }")
+		AuthCheck
 		noscript Your browser does not have JS enabled, you are still able to browse the website but you won't be able to access advanced features such as editing or loggin-in.
 		AppHeader
 		transition(name="fade", mode="out-in")
 			router-view.view
-
 </template>
 
 <style lang="scss">
@@ -31,11 +31,13 @@ noscript {
 
 <script>
 import AppHeader from "components/AppHeader.vue"
+import AuthCheck from "components/AuthCheck"
 
 export default {
 	name: "App",
 	components: {
-		AppHeader
+				AppHeader,
+				AuthCheck
 	},
 	data: () => {
 		return {

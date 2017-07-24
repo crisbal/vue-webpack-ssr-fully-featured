@@ -5,16 +5,30 @@
 			div.AppHeader__name
 				h3.AppHeader__title Site Name
 				div.AppHeader__subtitle $ts("site_subtitle")
+		NoSSR
+			.SessionInfo
+				p LoginStatus
+				template(v-if="$auth")
+					a(v-if="!$auth.check()") Not logged in
+					a(v-if="$auth.check()") You are logged in
+					button(@click=`$auth.login({
+						data: {
+							username: 'admin',
+							password: 'secret'
+						}
+					})`) Login
 </template>
 
 <style lang="scss">
 .AppHeader {
 	padding: 1rem;
-	font-size: 1.5rem;
+	font-size: 1.25rem;
 	background-color: whitesmoke;
+	display: flex;
 
 	&__link {
 		color: black;
+		flex: 1;
 	}
 
 	&__logo {
@@ -40,7 +54,10 @@
 </style>
 
 <script>
+import NoSSR from "vue-no-ssr"
+
 export default {
-	name: "AppHeader"
+	name: "AppHeader",
+	components: { NoSSR }
 }
 </script>

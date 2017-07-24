@@ -1,3 +1,4 @@
+import Vue from "vue"
 import { createApp } from "./app"
 
 const isDev = process.env.NODE_ENV !== "production"
@@ -7,6 +8,9 @@ const isDev = process.env.NODE_ENV !== "production"
 // state of our application before actually rendering it.
 // Since data fetching is async, this function is expected to
 // return a Promise that resolves to the app instance.
+
+Vue.prototype.$auth = null;
+
 export default (context) => {
 	return new Promise((resolve, reject) => {
 		const s = isDev && Date.now()
@@ -17,7 +21,6 @@ export default (context) => {
 		// wait until router has resolved possible async hooks
 		router.onReady(() => {
 			if (store.state.error) store.commit("CLEAR_ERROR")
-
 			const matchedComponents = router.getMatchedComponents()
 			// Call fetchData hooks on components matched by the route.
 			// A preFetch hook dispatches a store action and returns a Promise,

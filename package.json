@@ -79,6 +79,7 @@
     "webpack-merge": "^4.1.0"
   },
   "dependencies": {
+    "@websanova/vue-auth": "^2.13.0-beta",
     "axios": "^0.16.2",
     "compression": "^1.6.2",
     "es6-promise": "^4.1.0",
@@ -86,7 +87,9 @@
     "lru-cache": "^4.1.0",
     "serve-favicon": "^2.4.3",
     "vue": "^2.3.4",
+    "vue-axios": "^2.0.2",
     "vue-i18n": "^7.0.2",
+    "vue-no-ssr": "^0.1.2",
     "vue-router": "^2.6.0",
     "vue-server-renderer": "^2.3.4",
     "vuex": "^2.2.1",

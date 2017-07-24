@@ -2,6 +2,11 @@ import Vue from "vue"
 import "es6-promise/auto"
 import { createApp } from "./app"
 
+import axios from "axios"
+import VueAxios from "vue-axios"
+Vue.use(VueAxios, axios)
+Vue.axios.defaults.baseURL = 'https://api-demo.websanova.com/api/v1'
+
 // a global mixin that calls `asyncData` when a route component's params change
 Vue.mixin({
 	beforeRouteUpdate(to, from, next) {
@@ -18,6 +23,14 @@ Vue.mixin({
 })
 
 const { app, router, store } = createApp()
+
+Vue.router = router
+import VueAuth from "@websanova/vue-auth"
+Vue.use(VueAuth, {
+	auth: require("@websanova/vue-auth/drivers/auth/bearer.js"),
+	http: require("@websanova/vue-auth/drivers/http/axios.1.x.js"),
+	router: require("@websanova/vue-auth/drivers/router/vue-router.2.x.js")
+})
 
 // prime the store with server-initialized state.
 // the state is determined during SSR and inlined in the page markup.

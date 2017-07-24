@@ -1,14 +1,16 @@
 <template lang="pug">
-	main.view--Home
-		h1 Home Page
-		p Hello there!
-		p In the showcase you can see some of the features offered by this project
-		router-link(to="/showcase") Go to the showcase page
+    NoSrr
+        main.view--Home
+            h1 Home Page
+            router-link(to="/private") Go to the private page (require login)
 </template>
 
 <script>
+import NoSrr from "vue-no-ssr"
+
 export default {
 	name: "Home",
+	components: { NoSrr },
 	meta() {
 		return {
 			title: "Home",

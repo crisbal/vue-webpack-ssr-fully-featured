@@ -2,6 +2,10 @@
 # yarn lockfile v1
 
 
+"@websanova/vue-auth@^2.13.0-beta":
+  version "2.13.0-beta"
+  resolved "https://registry.yarnpkg.com/@websanova/vue-auth/-/vue-auth-2.13.0-beta.tgz#7fdfa6fe87b38a1491add9734bae4f73c2362aed"
+
 JSONStream@^0.8.4:
   version "0.8.4"
   resolved "https://registry.yarnpkg.com/JSONStream/-/JSONStream-0.8.4.tgz#91657dfe6ff857483066132b4618b62e8f4887bd"
@@ -6797,6 +6801,10 @@ vue-add-globals@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/vue-add-globals/-/vue-add-globals-1.0.1.tgz#151f241426e70cbc790a1f31bb0f4435d7575efc"
 
+vue-axios@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/vue-axios/-/vue-axios-2.0.2.tgz#0fe5a69f1edb09a1cd6c4a7f88c74d2fb7fe1778"
+
 vue-hot-reload-api@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.1.0.tgz#9ca58a6e0df9078554ce1708688b6578754d86de"
@@ -6822,6 +6830,10 @@ vue-loader@^12.2.1:
     vue-hot-reload-api "^2.1.0"
     vue-style-loader "^3.0.0"
     vue-template-es2015-compiler "^1.2.2"
+
+vue-no-ssr@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/vue-no-ssr/-/vue-no-ssr-0.1.2.tgz#464bc6d4347662b1d175feca45869d77f7a307d9"
 
 vue-router@^2.6.0:
   version "2.6.0"
