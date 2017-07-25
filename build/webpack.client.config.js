@@ -2,7 +2,6 @@ const webpack = require("webpack")
 const merge = require("webpack-merge")
 
 const HTMLPlugin = require("html-webpack-plugin")
-const SWPrecachePlugin = require("sw-precache-webpack-plugin")
 
 const base = require("./webpack.base.config")
 const config = require("../config")
@@ -40,26 +39,6 @@ if (config.isProduction) {
 				warnings: false
 			}
 		}),
-		// auto generate service worker
-		new SWPrecachePlugin({
-			cacheId: "vue-webpack-ssr-fully-featured",
-			filename: "service-worker.js",
-			minify: true,
-
-			staticFileGlobs: [
-				"dist/**.css",
-				"dist/**.js",
-				"dist/img/**/*"
-			],
-
-			runtimeCaching: [{
-				urlPattern: /\/.*/,
-				handler: "networkFirst"
-			}],
-
-			dontCacheBustUrlsMatching: /./,
-			navigateFallback: "/"
-		})
 	)
 }
 

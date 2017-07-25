@@ -1,5 +1,4 @@
 import Vue from "vue"
-import VueI18n from "vue-i18n"
 import { sync } from "vuex-router-sync"
 
 import { createStore } from "./store"
@@ -7,22 +6,8 @@ import { createRouter } from "./router"
 
 import App from "./App.vue"
 
-
 import metaInfo from "./mixins/metaInfo"
 Vue.mixin(metaInfo)
-
-// allow i18n for components
-Vue.use(VueI18n)
-
-// we use "primaryLanguage" as a key because it does not really matter
-// we can do this since the file is loaded using the `LANGUAGE_FILENAME` key
-const messages = {
-	"main": require(`./../i18n/${LANGUAGE_MAIN_FILENAME}.json`)
-}
-const i18n = new VueI18n({
-	locale: "main",
-	messages
-})
 
 // Expose a factory function that creates a fresh set of store, router,
 // app instances on each call (which is called for each SSR request)
@@ -41,7 +26,6 @@ export function createApp(ssrContext) {
 	const app = new Vue({
 		router,
 		store,
-		i18n,
 		ssrContext,
 		render: (h) => h(App)
 	})

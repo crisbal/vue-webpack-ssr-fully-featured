@@ -1,60 +1,16 @@
 const path = require("path")
 const webpack = require("webpack")
 
-const FriendlyErrorsPlugin = require("friendly-errors-webpack-plugin")
-const StringReplacePlugin = require("string-replace-webpack-plugin")
-const StyleLintPlugin = require("stylelint-webpack-plugin")
-
-const Vue = require("vue")
-const VueI18n = require("vue-i18n")
 const config = require("../config")
 
-const messages = {
-	main:	require(`../i18n/${config.language.filename}`),
-	fallback: config.fallbackLanguage ? require(`../i18n/${config.fallbackLanguage.filename}`) : null
-}
-
-Vue.use(VueI18n)
-i18n = new VueI18n({
-	locale: "main",
-	fallbackLocale: messages.fallback ? "fallback" : null,
-	messages
-})
+const FriendlyErrorsPlugin = require("friendly-errors-webpack-plugin")
 
 const commonPlugins = [
-	new StringReplacePlugin(),
 	new webpack.DefinePlugin({
 		"process.env.NODE_ENV": JSON.stringify(config.nodeEnv),
-		"PRODUCTION": config.isProduction,
-
-		"LANGUAGE_MAIN_FILENAME": JSON.stringify(config.language.filename),
-		"LANGUAGE_FALLBACK_FILENAME": config.fallbackLanguage ? JSON.stringify(config.fallbackLanguage.filename) : null,
-		"LANGUAGE_ISRTL": config.language.isRTL
-	}),
-	new StyleLintPlugin({
-		files: ["src/**/*.vue", "src/**/*.scss"]
+		"PRODUCTION": config.isProduction
 	})
 ]
-
-const doI18n = StringReplacePlugin.replace({
-	replacements: [{
-		pattern: /\$ts\((.+)\)/g,
-		replacement: function(fullMatch, params, offset, string) {
-			params = params.split(",").map((p) => eval(p))
-			if (i18n.tc(...params) === params[0]) {
-				// check if the translation key is defined
-				// We could have used i18n.te but it does not account for fallback languages
-				// We are using this instead. Uglier but does the job
-				if (config.isProduction) {
-					throw new Error(`[i18n] Translation key "${params[0]}" does not exist`)
-				} else { // just warn in development mode
-					console.warn(`[i18n] Translation key "${params[0]}" does not exist`)
-				}
-			}
-			return i18n.tc(...params)
-		}
-	}]
-})
 
 module.exports = {
 	devtool: config.isProduction
@@ -97,15 +53,7 @@ module.exports = {
 				test: /\.vue$/,
 				loader: "vue-loader",
 				options: {
-					preLoaders: {
-						pug: doI18n,
-						html: doI18n
-					},
 					preserveWhitespace: false,
-					postcss: [
-						require("autoprefixer")({browsers: ["last 3 versions"]}),
-						require("cssnano")
-					]
 				}
 			},
 			{

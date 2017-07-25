@@ -1,5 +1,5 @@
 <template lang="pug">
-	#app.App(:class="{ 'App--rtl': isRTL }")
+	#app.App
 		AuthCheck
 		noscript Your browser does not have JS enabled, you are still able to browse the website but you won't be able to access advanced features such as editing or loggin-in.
 		AppHeader
@@ -30,19 +30,14 @@ noscript {
 </style>
 
 <script>
-import AppHeader from "components/AppHeader.vue"
+import AppHeader from "components/AppHeader"
 import AuthCheck from "components/AuthCheck"
 
 export default {
 	name: "App",
 	components: {
-				AppHeader,
-				AuthCheck
-	},
-	data: () => {
-		return {
-			isRTL: LANGUAGE_ISRTL
-		}
+		AppHeader,
+		AuthCheck
 	}
 }
 </script>

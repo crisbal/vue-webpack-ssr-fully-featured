@@ -87,7 +87,6 @@ app.use(favicon('./static/favicon.png'))
 
 app.use("/dist", serve("./dist", true))
 app.use("/static", serve("./static", true))
-app.use("/service-worker.js", serve("./dist/service-worker.js"))
 
 app.get("*", (req, res) => {
 	const context = {
