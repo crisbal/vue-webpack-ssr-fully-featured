@@ -13,7 +13,7 @@
 * [Localization](Localization.md)
 * [Server Side Rendering](Server-Side-Rendering.md)
 * [Meta Tags](Meta-Tags.md)
-* [Error Handling](Error Handling.md)
+* [Error Handling](Error-Handling.md)
 
 ## Other
 
