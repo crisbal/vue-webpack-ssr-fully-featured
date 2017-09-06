@@ -2,7 +2,7 @@
 
 It is possible to inject and edit at run time (both on the server and on the client) various meta tags, such as for changing the title of the page, the description and the keywords.
 
-This is possible thanks to the [metaInfo mixin](../src/utils/metaInfo.mixin.js).
+This is possible thanks to the [metaInfo mixin](../src/mixins/metaInfo.js).
 
 To specify meta tags information you have to define a `meta()` function in your component (or better, in your view), the `meta()` function should return an object containing the various meta-informations.
 
@@ -39,11 +39,11 @@ Open [index.template.html](../src/index.template.html), find the `head` and add 
 
 **Client**
 
-Open the [metaInfo mixin](../src/utils/metaInfo.mixin.js), find the declaration of `clientMetaInfoMixin` and add inside the conditional check the JS needed to update the meta tag in the browser, in our case
+Open the [metaInfo mixin](../src/mixins/metaInfo.js), find the declaration of `clientMetaInfoMixin` and add inside the conditional check the JS needed to update the meta tag in the browser, in our case
 ```javascript
 document.querySelector("meta[name=keywords]")
-				.setAttribute("content", meta.keywords)
-			```
+	.setAttribute("content", meta.keywords)
+```
 
 **Components**
 
