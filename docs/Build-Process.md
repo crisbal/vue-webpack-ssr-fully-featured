@@ -6,6 +6,10 @@ There are two build process, one for the client and one for the server.
 
 You can start the build process with `npm/yarn run build`. You can also run only the client or the server build process with `yarn run build:client`, `yarn run build:server`.
 
+### Building a Docker Image
+
+[@Gingernaut](https://github.com/Gingernaut) proposed [this PR](https://github.com/crisbal/vue-webpack-ssr-fully-featured/pull/5) where you can find an example Dockerfile to run and build the project. 
+
 ## Build Variables
 
 Specify the `BUILD_LANGUAGE` environment variable (two letter language code defined in `config.js`) to build the project for a different language, by default `BUILD_LANGUAGE` is `en`.
