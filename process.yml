@@ -1,0 +1,5 @@
+apps:
+  - script   : 'server.js'
+    name     : 'vue-webpack-ssr-fully-featured'
+    exec_mode: 'cluster'
+    instances: 4

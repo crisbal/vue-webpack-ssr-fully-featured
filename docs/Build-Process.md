@@ -6,6 +6,11 @@ There are two build process, one for the client and one for the server.
 
 You can start the build process with `npm/yarn run build`. You can also run only the client or the server build process with `yarn run build:client`, `yarn run build:server`.
 
+## Building with Docker
+
+You can run this projct as a docker image with a pm2 load balancer inside. First run `docker build -t projectname ` and then `docker run -p 8080:8080 projectname:latest`.
+
+
 ## Build Variables
 
 Specify the `BUILD_LANGUAGE` environment variable (two letter language code defined in `config.js`) to build the project for a different language, by default `BUILD_LANGUAGE` is `en`.
