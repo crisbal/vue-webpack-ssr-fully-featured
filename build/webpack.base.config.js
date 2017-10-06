@@ -116,7 +116,7 @@ module.exports = {
 			},
 			{
 				test: /\.js$/,
-				loader: 'babel-loader',
+				loader: "babel-loader",
 				exclude: /node_modules/
 			},
 			{
@@ -126,6 +126,10 @@ module.exports = {
 					limit: 10000,
 					name: "img/[name].[hash:16].[ext]"
 				}
+			},
+			{
+				test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+				loader: "url-loader?limit=10000"
 			}
 		]
 	},
