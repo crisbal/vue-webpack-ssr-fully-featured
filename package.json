@@ -6,7 +6,7 @@
   "license": "GPL-3.0",
   "private": true,
   "scripts": {
-    "dev": "node server",
+    "dev": "webpack-dashboard -- node server",
     "start": "cross-env NODE_ENV=production node server",
     "build": "rimraf dist && npm run build:client && npm run build:server",
     "build:client": "cross-env NODE_ENV=production webpack --config build/webpack.client.config.js --progress --hide-modules",
@@ -74,6 +74,7 @@
     "vue-loader": "^13.0.2",
     "vue-template-compiler": "^2.4.2",
     "webpack": "^3.4.1",
+    "webpack-dashboard": "^1.0.0",
     "webpack-dev-middleware": "^1.12.0",
     "webpack-hot-middleware": "^2.18.2",
     "webpack-merge": "^4.1.0"

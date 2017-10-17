@@ -1,6 +1,7 @@
 const path = require("path")
 const webpack = require("webpack")
 
+const DashboardPlugin = require("webpack-dashboard/plugin")
 const FriendlyErrorsPlugin = require("friendly-errors-webpack-plugin")
 const StringReplacePlugin = require("string-replace-webpack-plugin")
 const StyleLintPlugin = require("stylelint-webpack-plugin")
@@ -140,6 +141,7 @@ module.exports = {
 	},
 
 	plugins: config.isProduction ? commonPlugins : commonPlugins.concat([
-		new FriendlyErrorsPlugin()
+		new FriendlyErrorsPlugin(),
+		new DashboardPlugin()
 	])
 }
