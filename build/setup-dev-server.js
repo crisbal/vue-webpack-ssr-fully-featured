@@ -32,7 +32,6 @@ module.exports = function setupDevServer(app, cb) {
 	clientCompiler.apply(new DashboardPlugin())
 	const devMiddleware = require("webpack-dev-middleware")(clientCompiler, {
 		publicPath: clientConfig.output.publicPath,
-		quiet: true,
 		noInfo: true
 	})
 	app.use(devMiddleware)
@@ -50,9 +49,7 @@ module.exports = function setupDevServer(app, cb) {
 	})
 
 	// hot middleware
-	app.use(require("webpack-hot-middleware")(clientCompiler, {
-		log: () => {}
-	}))
+	app.use(require("webpack-hot-middleware")(clientCompiler))
 
 	// watch and update server renderer
 	const serverCompiler = webpack(serverConfig)
