@@ -1,6 +1,7 @@
 const path = require("path")
 const webpack = require("webpack")
 
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const FriendlyErrorsPlugin = require("friendly-errors-webpack-plugin")
 const StringReplacePlugin = require("string-replace-webpack-plugin")
 const StyleLintPlugin = require("stylelint-webpack-plugin")
@@ -21,7 +22,7 @@ i18n = new VueI18n({
 	messages
 })
 
-const commonPlugins = [
+let commonPlugins = [
 	new StringReplacePlugin(),
 	new webpack.DefinePlugin({
 		"process.env.NODE_ENV": JSON.stringify(config.nodeEnv),
@@ -35,6 +36,12 @@ const commonPlugins = [
 		files: ["src/**/*.vue", "src/**/*.scss"]
 	})
 ]
+
+if (config.isAnalyzing) {
+	commonPlugins.push(
+		new BundleAnalyzerPlugin()
+	)
+}
 
 const doI18n = StringReplacePlugin.replace({
 	replacements: [{

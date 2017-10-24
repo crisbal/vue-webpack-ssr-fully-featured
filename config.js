@@ -26,6 +26,7 @@ const fallbackLanguage = languages[language.fallback] || null
 
 // the environment that will be considered when building the skin, either `production` or `development`
 const nodeEnv = process.env.NODE_ENV || "development"
+const analyze = process.env.ANALYZE || false
 
 module.exports = {
 	language: language,
@@ -34,6 +35,7 @@ module.exports = {
 	nodeEnv: nodeEnv,
 	isProduction: nodeEnv === "production",
 	isTesting: nodeEnv === "testing",
+	isAnalyzing: analyze,
 
 	server: {
 		port: process.env.SERVER_PORT || 8080
