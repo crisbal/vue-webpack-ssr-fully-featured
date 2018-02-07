@@ -19,14 +19,15 @@ Vue.use(VueI18n)
 const messages = {
 	"main": require(`./../i18n/${LANGUAGE_MAIN_FILENAME}.json`)
 }
-const i18n = new VueI18n({
-	locale: "main",
-	messages
-})
 
 // Expose a factory function that creates a fresh set of store, router,
 // app instances on each call (which is called for each SSR request)
 export function createApp(ssrContext) {
+	const i18n = new VueI18n({
+		locale: "main",
+		messages
+	})
+
 	// create store and router instances
 	const store = createStore()
 	const router = createRouter()
