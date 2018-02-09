@@ -3,6 +3,7 @@ const webpack = require("webpack")
 const MFS = require("memory-fs")
 const clientConfig = require("./webpack.client.config")
 const serverConfig = require("./webpack.server.config")
+const DashboardPlugin = require("webpack-dashboard/plugin")
 
 module.exports = function setupDevServer(app, cb) {
 	let bundle
@@ -28,6 +29,7 @@ module.exports = function setupDevServer(app, cb) {
 
 	// dev middleware
 	const clientCompiler = webpack(clientConfig)
+	clientCompiler.apply(new DashboardPlugin())
 	const devMiddleware = require("webpack-dev-middleware")(clientCompiler, {
 		publicPath: clientConfig.output.publicPath,
 		noInfo: true
@@ -51,6 +53,7 @@ module.exports = function setupDevServer(app, cb) {
 
 	// watch and update server renderer
 	const serverCompiler = webpack(serverConfig)
+	serverCompiler.apply(new DashboardPlugin())
 	const mfs = new MFS()
 	serverCompiler.outputFileSystem = mfs
 	serverCompiler.watch({}, (err, stats) => {
